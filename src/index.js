@@ -8,10 +8,9 @@ import { ApolloProvider } from 'react-apollo'
 import 'tachyons'
 import './index.css'
 
-const client = new ApolloClient({
-  networkInterface: createNetworkInterface('https://api.graph.cool/simple/v1/cis7q7f5r27ig01420766c54k'),
-  dataIdFromObject: r => r.id,
-})
+const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/__PROJECT_ID__')
+
+const client = new ApolloClient({ networkInterface })
 
 ReactDOM.render((
   <ApolloProvider client={client}>

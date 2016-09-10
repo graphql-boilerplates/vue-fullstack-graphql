@@ -1,10 +1,10 @@
-# angular-apollo-instagram-example
-![](http://i.imgur.com/acxRg0p.png)
+# react-apollo-instagram-example
+![](http://i.imgur.com/CH44AZF.png)
 
 
 ## Getting Started
 
-After [downloading this example](https://github.com/graphcool-examples/angular-apollo-instagram-example/archive/master.zip) please follow these steps.
+After [downloading this example](https://github.com/graphcool-examples/react-apollo-instagram-example/archive/master.zip) please follow these steps.
 
 ### 1. Create an account
 
@@ -23,7 +23,7 @@ type Post {
 
 ### 2. Configure app data endpoint
 
-Open `src/client.ts` and paste your endpoint to the following line:
+Open `src/index.js` and paste your endpoint to the following line:
 
 ```js
 const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/__PROJECT_ID__')
