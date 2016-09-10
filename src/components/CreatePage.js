@@ -16,6 +16,7 @@ class CreatePage extends React.Component {
   }
 
   render () {
+    console.log(this.props)
     return (
       <div className='w-100 pa4 flex justify-center'>
         <div style={{ maxWidth: 400 }} className=''>
@@ -45,7 +46,9 @@ class CreatePage extends React.Component {
   handlePost = () => {
     const {description, imageUrl} = this.state
     this.props.mutate({variables: {description, imageUrl}})
-      .then(() => this.props.router.replace('/'))
+      .then(() => {
+        this.props.router.replace('/')
+      })
   }
 }
 
