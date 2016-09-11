@@ -17,7 +17,7 @@ networkInterface.use([{
       // Create the header object if needed.
       req.options.headers = {}
     }
-    req.options.headers['x-graphcool-source'] = 'example:react-apollo-apollo'
+    req.options.headers['x-graphcool-source'] = 'example:react-apollo-instagram'
     next()
   },
 }])
