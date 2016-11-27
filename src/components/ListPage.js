@@ -29,7 +29,13 @@ class ListPage extends React.Component {
   }
 }
 
-const FeedQuery = gql`query { allPosts { id imageUrl description } }`
+const FeedQuery = gql`query allPosts {
+  allPosts {
+    id
+    imageUrl
+    description
+  }
+}`
 
 const ListPageWithData = graphql(FeedQuery)(ListPage)
 

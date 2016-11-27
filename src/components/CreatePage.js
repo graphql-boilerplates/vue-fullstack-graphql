@@ -7,7 +7,7 @@ class CreatePage extends React.Component {
 
   static propTypes = {
     router: React.PropTypes.object,
-    mutate: React.PropTypes.func,
+    addPost: React.PropTypes.func,
   }
 
   state = {
@@ -16,7 +16,6 @@ class CreatePage extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <div className='w-100 pa4 flex justify-center'>
         <div style={{ maxWidth: 400 }} className=''>
@@ -45,21 +44,38 @@ class CreatePage extends React.Component {
 
   handlePost = () => {
     const {description, imageUrl} = this.state
-    this.props.mutate({variables: {description, imageUrl}})
+    this.props.addPost({ description, imageUrl })
       .then(() => {
-        this.props.router.replace('/')
+        this.props.router.push('/')
       })
   }
 }
 
 const addMutation = gql`
-  mutation ($description: String!, $imageUrl: String!){
+  mutation addPost($description: String!, $imageUrl: String!) {
     createPost(description: $description, imageUrl: $imageUrl) {
       id
+      description
+      imageUrl
     }
   }
 `
 
-const PageWithMutation = graphql(addMutation)(withRouter(CreatePage))
+const PageWithMutation = graphql(addMutation, {
+  props: ({ ownProps, mutate }) => ({
+    addPost: ({ description, imageUrl }) =>
+      mutate({
+        variables: { description, imageUrl },
+        updateQueries: {
+          allPosts: (state, { mutationResult }) => {
+            const newPost = mutationResult.data.createPost
+            return {
+              allPosts: [...state.allPosts, newPost]
+            }
+          },
+        },
+      })
+  })
+})(withRouter(CreatePage))
 
 export default PageWithMutation
