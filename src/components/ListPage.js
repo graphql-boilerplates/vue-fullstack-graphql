@@ -31,6 +31,6 @@ class ListPage extends React.Component {
 
 const FeedQuery = gql`query { allPosts { id imageUrl description } }`
 
-const ListPageWithData = graphql(FeedQuery, {options: { pollInterval: 1000 } })(ListPage)
+const ListPageWithData = graphql(FeedQuery)(ListPage)
 
 export default ListPageWithData
