@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.4.1"
+    "react-scripts": "0.8.1"
   },
   "dependencies": {
     "apollo-client": "^0.7.0",
-    "graphql-tag": "^0.1.13",
+    "graphql-tag": "^1.2.1",
     "react": "^15.3.1",
     "react-apollo": "^0.8.1",
     "react-dom": "^15.3.1",
