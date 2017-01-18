@@ -14,13 +14,14 @@ class ListPage extends React.Component {
     if (this.props.data.loading) {
       return (<div>Loading</div>)
     }
+
     return (
       <div className='w-100 flex justify-center'>
         <Link to='/create' className='fixed bg-white top-0 right-0 pa4 ttu dim black no-underline'>
           + New Post
         </Link>
         <div className='w-100' style={{ maxWidth: 400 }}>
-          {this.props.data.allPosts.reverse().map((post) =>
+          {this.props.allPosts.map((post) =>
             <Post key={post.id} post={post} refresh={() => this.props.data.refetch()} />
           )}
         </div>
@@ -30,7 +31,7 @@ class ListPage extends React.Component {
 }
 
 const FeedQuery = gql`query allPosts {
-  allPosts {
+  allPosts(orderBy: createdAt_DESC) {
     id
     imageUrl
     description

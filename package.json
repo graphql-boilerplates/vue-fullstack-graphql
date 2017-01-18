@@ -6,10 +6,10 @@
     "react-scripts": "0.4.1"
   },
   "dependencies": {
-    "apollo-client": "^0.5.6",
+    "apollo-client": "^0.7.0",
     "graphql-tag": "^0.1.13",
     "react": "^15.3.1",
-    "react-apollo": "^0.5.4",
+    "react-apollo": "^0.8.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.8.0",
     "tachyons": "^4.3.1"
