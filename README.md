@@ -1,10 +1,9 @@
 # react-apollo-instagram-example
 ![](http://i.imgur.com/CH44AZF.png)
 
-
 ## Getting Started
 
-After [downloading this example](https://github.com/graphcool-examples/react-apollo-instagram-example/archive/master.zip) please follow these steps.
+After [downloading this example](https://github.com/graphcool-examples/react-apollo-instagram-example/archive/master.zip) please follow these steps or watch the [walkthrough video](https://www.youtube.com/watch?v=SooujCyMHe4) for this example!
 
 ### 1. Create an account
 
