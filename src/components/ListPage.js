@@ -21,9 +21,13 @@ class ListPage extends React.Component {
           + New Post
         </Link>
         <div className='w-100' style={{ maxWidth: 400 }}>
-          {this.props.data.allPosts.map((post) =>
-            <Post key={post.id} post={post} refresh={() => this.props.data.refetch()} />
-          )}
+          {this.props.data.allPosts.map((post) => (
+            <Post
+              key={post.id}
+              post={post}
+              refresh={() => this.props.data.refetch()}
+            />
+          ))}
         </div>
       </div>
     )

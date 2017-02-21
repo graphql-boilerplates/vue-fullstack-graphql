@@ -1,0 +1,26 @@
+# projectId: "cizfovlyi085b0159rluqv7eq"
+
+type File {
+  contentType: String!
+  createdAt: DateTime
+  id: ID!
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime
+  url: String!
+}
+
+type Post {
+  createdAt: DateTime
+  description: String!
+  id: ID!
+  imageUrl: String!
+  updatedAt: DateTime
+}
+
+type User {
+  createdAt: DateTime
+  id: ID!
+  updatedAt: DateTime
+}

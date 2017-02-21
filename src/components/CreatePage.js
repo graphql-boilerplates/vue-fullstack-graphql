@@ -42,12 +42,11 @@ class CreatePage extends React.Component {
     )
   }
 
-  handlePost = () => {
+  handlePost = async () => {
     const {description, imageUrl} = this.state
-    this.props.addPost({ description, imageUrl })
-      .then(() => {
-        this.props.router.push('/')
-      })
+    await this.props.addPost({variables: { description, imageUrl }})
+
+    window.location.pathname = '/'
   }
 }
 
@@ -61,21 +60,6 @@ const addMutation = gql`
   }
 `
 
-const PageWithMutation = graphql(addMutation, {
-  props: ({ ownProps, mutate }) => ({
-    addPost: ({ description, imageUrl }) =>
-      mutate({
-        variables: { description, imageUrl },
-        updateQueries: {
-          allPosts: (state, { mutationResult }) => {
-            const newPost = mutationResult.data.createPost
-            return {
-              allPosts: [...state.allPosts, newPost]
-            }
-          },
-        },
-      })
-  })
-})(withRouter(CreatePage))
+const PageWithMutation = graphql(addMutation, { name: 'addPost' })(CreatePage)
 
-export default PageWithMutation
+export default withRouter(PageWithMutation)

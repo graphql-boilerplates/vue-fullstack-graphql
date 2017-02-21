@@ -8,22 +8,12 @@ import { ApolloProvider } from 'react-apollo'
 import 'tachyons'
 import './index.css'
 
-const networkInterface = createNetworkInterface({ uri: 'https://api.graph.cool/simple/v1/__PROJECT_ID__' })
+const networkInterface = createNetworkInterface({ uri: process.env.REACT_APP_GRAPHQL_ENDPOINT })
 
-// The x-graphcool-source header is to let the server know that the example app has started.
-// (Not necessary for normal projects)
-networkInterface.use([{
-  applyMiddleware (req, next) {
-    if (!req.options.headers) {
-      // Create the header object if needed.
-      req.options.headers = {}
-    }
-    req.options.headers['x-graphcool-source'] = 'example:react-apollo-instagram'
-    next()
-  },
-}])
-
-const client = new ApolloClient({ networkInterface })
+const client = new ApolloClient({
+  networkInterface,
+  dataIdFromObject: o => o.id,
+})
 
 ReactDOM.render((
   <ApolloProvider client={client}>

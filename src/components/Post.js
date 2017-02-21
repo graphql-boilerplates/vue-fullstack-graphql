@@ -29,9 +29,10 @@ class Post extends React.Component {
     )
   }
 
-  handleDelete = () => {
-    this.props.mutate({variables: {id: this.props.post.id}})
-      .then(this.props.refresh)
+  handleDelete = async () => {
+    await this.props.mutate({variables: {id: this.props.post.id}})
+
+    this.props.refresh()
   }
 }
 
