@@ -20,12 +20,10 @@ type Post {
 }
 ```
 
-### 2. Configure app data endpoint
+### 2. Configure your GraphQL Endpoint
 
-Open `src/index.js` and paste your endpoint to the following line:
-
-```js
-const networkInterface = createNetworkInterface('https://api.graph.cool/simple/v1/__PROJECT_ID__')
+```sh
+export REACT_APP_GRAPHQL_ENDPOINT="https://api.graph.cool/simple/v1/__PROJECT_ID__"
 ```
 
 ### 3. Run the example
