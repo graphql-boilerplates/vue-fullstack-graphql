@@ -35,6 +35,7 @@ class CreatePage extends React.Component {
               value={this.state.imageUrl}
               placeholder='Image Url'
               onChange={(e) => this.setState({imageUrl: e.target.value})}
+              autoFocus
             />
             <input
               className='w-100 pa3 mv2'
