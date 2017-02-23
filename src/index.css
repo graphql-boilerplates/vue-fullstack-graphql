@@ -60,3 +60,22 @@ html {
 .blur {
   filter: blur(7px);
 }
+
+.close {
+  opacity: 0.5;
+  margin-top: 60px;
+  margin-right: 60px;
+}
+.close img {
+  width: 34px;
+  height: 34px;
+}
+
+.delete {
+  background-color: rgb(242,92,94);
+  font-size: 14px;
+  padding: 6px 9px 7px 9px;
+  letter-spacing: 0.46px;
+  margin-top: 18px;
+  margin-left: 18px;
+}

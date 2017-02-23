@@ -10,6 +10,12 @@ class ListPage extends React.Component {
     data: React.PropTypes.object,
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.key !== nextProps.location.key) {
+      this.props.data.refetch()
+    }
+  }
+
   render () {
     if (this.props.data.loading) {
       return (<div>Loading</div>)

@@ -33,6 +33,15 @@ class DetailPage extends React.Component {
         style={detailModalStyle}
         onRequestClose={this.props.router.goBack}
       >
+        <div className='close fixed right-0 top-0 pointer'>
+          <img src={require('../assets/close.svg')} alt=''/>
+        </div>
+        <div
+          className='delete ttu white pointer fw6 absolute left-0 top-0 br2'
+          onClick={this.handleDelete}
+        >
+          Delete
+        </div>
         <div className='bg-white detail flex flex-column no-underline br2 h-100'>
           <div
             className='image'
@@ -49,8 +58,23 @@ class DetailPage extends React.Component {
       </Modal>
     )
   }
+
+  handleDelete = async () => {
+    await this.props.mutate({variables: {id: this.props.data.Post.id}})
+
+    this.props.router.push('/')
+    this.props.data.refetch()
+  }
 }
 
+
+const deleteMutation = gql`
+  mutation deletePost($id: ID!) {
+    deletePost(id: $id) {
+      id
+    }
+  }
+`
 
 const PostQuery = gql`query post($id: ID!) {
   Post(id: $id) {
@@ -61,11 +85,13 @@ const PostQuery = gql`query post($id: ID!) {
 }`
 
 const DetailPageWithData = graphql(PostQuery, {
-  options: () => ({
+  options: ({params}) => ({
     variables: {
-      id: 'cizibffrjta3g0160fjr4ynip'
+      id: params.id
     }
   })
 })(DetailPage)
 
-export default withRouter(DetailPageWithData)
+const DetailPageWithDelete = graphql(deleteMutation)(DetailPageWithData)
+
+export default withRouter(DetailPageWithDelete)
