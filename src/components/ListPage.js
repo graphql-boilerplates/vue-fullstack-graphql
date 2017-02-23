@@ -18,7 +18,11 @@ class ListPage extends React.Component {
 
   render () {
     if (this.props.data.loading) {
-      return (<div>Loading</div>)
+      return (<div className='flex w-100 h-100 items-center justify-center pt7'>
+        <div>
+          Loading
+        </div>
+      </div>)
     }
 
     let blurClass = ''
