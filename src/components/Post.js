@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
+import {Link} from 'react-router'
 
 class Post extends React.Component {
 
@@ -12,22 +13,25 @@ class Post extends React.Component {
 
   render () {
     return (
-      <div className='pa3 bg-black-05 ma3'>
+      <Link
+        className='bg-white ma3 box post flex flex-column no-underline br2'
+        to={`/post/${this.props.post.id}`}
+      >
         <div
-          className='w-100'
+          className='image'
           style={{
             backgroundImage: `url(${this.props.post.imageUrl})`,
             backgroundSize: 'cover',
             paddingBottom: '100%',
           }}
         />
-        <div className='pt3'>
-          {this.props.post.description}&nbsp;
-          <span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
+        <div className='flex items-center black-80 fw3 description'>
+          {this.props.post.description}
         </div>
-      </div>
+      </Link>
     )
   }
+          //<span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
 
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.post.id}})
