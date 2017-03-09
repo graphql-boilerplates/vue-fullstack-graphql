@@ -35,6 +35,23 @@ npm install
 npm start
 ```
 
+## FAQ
+
+
+### How to run this example on Windows?
+
+Replace this line in `package.json`
+
+```json
+"start": "REACT_APP_GRAPHQL_ENDPOINT=${REACT_APP_GRAPHQL_ENDPOINT:=https://api.graph.cool/simple/v1/__PROJECT_ID__} react-scripts start",
+```
+
+with
+
+```json
+"start": "set REACT_APP_GRAPHQL_ENDPOINT=https://api.graph.cool/simple/v1/__PROJECT_ID__&&react-scripts start",
+```
+
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
