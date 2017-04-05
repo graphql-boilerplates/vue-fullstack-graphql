@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router'
+import { withRouter } from 'react-router-dom'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import Modal from 'react-modal'
@@ -23,7 +23,7 @@ class CreatePage extends React.Component {
         isOpen
         contentLabel='Create Post'
         style={modalStyle}
-        onRequestClose={this.props.router.goBack}
+        onRequestClose={this.props.history.goBack}
       >
         <div className='pa4 flex justify-center bg-white'>
           <div style={{ maxWidth: 400 }} className=''>

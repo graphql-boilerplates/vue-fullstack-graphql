@@ -3,7 +3,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import Modal from 'react-modal'
 import modalStyle from '../constants/modalStyle'
-import {withRouter} from 'react-router'
+import {withRouter} from 'react-router-dom'
 
 const detailModalStyle = {
   overlay: modalStyle.overlay,
@@ -21,7 +21,12 @@ class DetailPage extends React.Component {
 
   render () {
     if (this.props.data.loading) {
-      return (<div>Loading</div>)
+      return (<div className='flex w-100 h-100 items-center justify-center pt7'>
+        <div>
+          Loading
+          (from {process.env.REACT_APP_GRAPHQL_ENDPOINT})
+        </div>
+      </div>)
     }
 
     const {Post} = this.props.data
@@ -31,9 +36,12 @@ class DetailPage extends React.Component {
         isOpen
         contentLabel='Create Post'
         style={detailModalStyle}
-        onRequestClose={this.props.router.goBack}
+        onRequestClose={this.props.history.goBack}
       >
-        <div className='close fixed right-0 top-0 pointer'>
+        <div
+          className='close fixed right-0 top-0 pointer'
+          onClick={this.props.history.goBack}
+        >
           <img src={require('../assets/close.svg')} alt=''/>
         </div>
         <div
@@ -62,7 +70,7 @@ class DetailPage extends React.Component {
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.data.Post.id}})
 
-    this.props.router.push('/')
+    this.props.history.push('/')
     this.props.data.refetch()
   }
 }
@@ -76,18 +84,24 @@ const deleteMutation = gql`
   }
 `
 
-const PostQuery = gql`query post($id: ID!) {
-  Post(id: $id) {
-    id
-    imageUrl
-    description
+const PostQuery = gql`
+  query post($id: ID!) {
+    Post(id: $id) {
+      id
+      imageUrl
+      description
+    }
   }
-}`
+`
 
+// update w/ react-router v4 url params api
+//
+// see documentation on computing query variables from props in wrapper
+// http://dev.apollodata.com/react/queries.html#options-from-props
 const DetailPageWithData = graphql(PostQuery, {
-  options: ({params}) => ({
+  options: ({ match }) => ({
     variables: {
-      id: params.id
+      id: match.params.id
     }
   })
 })(DetailPage)
