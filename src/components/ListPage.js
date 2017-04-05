@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import Post from '../components/Post'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
@@ -21,6 +21,7 @@ class ListPage extends React.Component {
       return (<div className='flex w-100 h-100 items-center justify-center pt7'>
         <div>
           Loading
+          (from {process.env.REACT_APP_GRAPHQL_ENDPOINT})
         </div>
       </div>)
     }
