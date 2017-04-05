@@ -23,8 +23,10 @@ type Post {
 ### 2. Configure your GraphQL Endpoint
 
 ```sh
-export REACT_APP_GRAPHQL_ENDPOINT="https://api.graph.cool/simple/v1/__PROJECT_ID__"
+cp .env.default .env
 ```
+
+Update your new, private `.env` with your GraphQL endpoint ([and other secrets, if desired](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-development-environment-variables-in-env))
 
 ### 3. Run the example
 
