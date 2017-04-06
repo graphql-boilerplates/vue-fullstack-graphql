@@ -70,10 +70,13 @@ class DetailPage extends React.Component {
     );
   }
 
+  // would be nice to trigger a "deleting... -> deleted." snackbar-style notification
+  // while this runs
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.data.Post.id}});
 
-    this.props.history.push('/');
+    // post is gone, so remove it from history stack
+    this.props.history.replace('/');
     this.props.data.refetch();
   };
 }

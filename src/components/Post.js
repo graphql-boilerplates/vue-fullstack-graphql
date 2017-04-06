@@ -7,7 +7,7 @@ class Post extends React.Component {
   static propTypes = {
     post: React.PropTypes.object,
     mutate: React.PropTypes.func,
-    refresh: React.PropTypes.func,
+    history: React.PropTypes.func,
   };
 
   render() {
@@ -32,10 +32,10 @@ class Post extends React.Component {
   }
   //<span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
 
+  // not currently used.
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.post.id}});
-
-    this.props.refresh();
+    this.props.history.replace('/');
   };
 }
 
