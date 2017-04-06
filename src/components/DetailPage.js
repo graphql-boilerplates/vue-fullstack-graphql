@@ -1,80 +1,82 @@
-import React from 'react'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-import Modal from 'react-modal'
-import modalStyle from '../constants/modalStyle'
-import {withRouter} from 'react-router-dom'
+import React from 'react';
+import {graphql} from 'react-apollo';
+import gql from 'graphql-tag';
+import Modal from 'react-modal';
+import modalStyle from '../constants/modalStyle';
+import {withRouter} from 'react-router-dom';
 
 const detailModalStyle = {
   overlay: modalStyle.overlay,
   content: {
     ...modalStyle.content,
-    height: 761
-  }
-}
+    height: 761,
+  },
+};
 
 class DetailPage extends React.Component {
-
   static propTypes = {
     data: React.PropTypes.object,
-  }
+  };
 
-  render () {
+  render() {
     if (this.props.data.loading) {
-      return (<div className='flex w-100 h-100 items-center justify-center pt7'>
-        <div>
-          Loading
-          (from {process.env.REACT_APP_GRAPHQL_ENDPOINT})
+      return (
+        <div className="flex w-100 h-100 items-center justify-center pt7">
+          <div>
+            Loading
+            (from {process.env.REACT_APP_GRAPHQL_ENDPOINT})
+          </div>
         </div>
-      </div>)
+      );
     }
 
-    const {Post} = this.props.data
+    const {Post} = this.props.data;
 
     return (
       <Modal
         isOpen
-        contentLabel='Create Post'
+        contentLabel="Create Post"
         style={detailModalStyle}
         onRequestClose={this.props.history.goBack}
       >
         <div
-          className='close fixed right-0 top-0 pointer'
+          className="close fixed right-0 top-0 pointer"
           onClick={this.props.history.goBack}
         >
-          <img src={require('../assets/close.svg')} alt=''/>
+          <img src={require('../assets/close.svg')} alt="" />
         </div>
         <div
-          className='delete ttu white pointer fw6 absolute left-0 top-0 br2'
+          className="delete ttu white pointer fw6 absolute left-0 top-0 br2"
           onClick={this.handleDelete}
         >
           Delete
         </div>
-        <div className='bg-white detail flex flex-column no-underline br2 h-100'>
+        <div
+          className="bg-white detail flex flex-column no-underline br2 h-100"
+        >
           <div
-            className='image'
+            className="image"
             style={{
               backgroundImage: `url(${Post.imageUrl})`,
               backgroundSize: 'cover',
               paddingBottom: '100%',
             }}
           />
-          <div className='flex items-center black-80 fw3 description'>
+          <div className="flex items-center black-80 fw3 description">
             {Post.description}
           </div>
         </div>
       </Modal>
-    )
+    );
   }
 
   handleDelete = async () => {
-    await this.props.mutate({variables: {id: this.props.data.Post.id}})
+    await this.props.mutate({variables: {id: this.props.data.Post.id}});
 
-    this.props.history.push('/')
-    this.props.data.refetch()
-  }
+    this.props.history.push('/');
+    this.props.data.refetch();
+  };
 }
-
 
 const deleteMutation = gql`
   mutation deletePost($id: ID!) {
@@ -82,7 +84,7 @@ const deleteMutation = gql`
       id
     }
   }
-`
+`;
 
 const PostQuery = gql`
   query post($id: ID!) {
@@ -92,20 +94,20 @@ const PostQuery = gql`
       description
     }
   }
-`
+`;
 
 // update w/ react-router v4 url params api
 //
 // see documentation on computing query variables from props in wrapper
 // http://dev.apollodata.com/react/queries.html#options-from-props
 const DetailPageWithData = graphql(PostQuery, {
-  options: ({ match }) => ({
+  options: ({match}) => ({
     variables: {
-      id: match.params.id
-    }
-  })
-})(DetailPage)
+      id: match.params.id,
+    },
+  }),
+})(DetailPage);
 
-const DetailPageWithDelete = graphql(deleteMutation)(DetailPageWithData)
+const DetailPageWithDelete = graphql(deleteMutation)(DetailPageWithData);
 
-export default withRouter(DetailPageWithDelete)
+export default withRouter(DetailPageWithDelete);
