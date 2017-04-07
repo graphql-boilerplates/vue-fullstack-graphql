@@ -20,6 +20,6 @@ const modalStyle = {
     background: 'none',
     boxShadow: '0 1px 7px rgba(0,0,0,.2)',
   },
-};
+}
 
-export default modalStyle;
+export default modalStyle
