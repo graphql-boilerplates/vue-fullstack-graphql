@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {graphql} from 'react-apollo';
-import gql from 'graphql-tag';
+import React from 'react'
+import {Link} from 'react-router-dom'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 
 class Post extends React.Component {
   static propTypes = {
@@ -13,29 +13,29 @@ class Post extends React.Component {
   render() {
     return (
       <Link
-        className="bg-white ma3 box post flex flex-column no-underline br2"
+        className='bg-white ma3 box post flex flex-column no-underline br2'
         to={`/post/${this.props.post.id}`}
       >
         <div
-          className="image"
+          className='image'
           style={{
             backgroundImage: `url(${this.props.post.imageUrl})`,
             backgroundSize: 'cover',
             paddingBottom: '100%',
           }}
         />
-        <div className="flex items-center black-80 fw3 description">
+        <div className='flex items-center black-80 fw3 description'>
           {this.props.post.description}
         </div>
       </Link>
-    );
+    )
   }
   //<span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
 
   // not currently used.
   handleDelete = async () => {
-    await this.props.mutate({variables: {id: this.props.post.id}});
-    this.props.history.replace('/');
+    await this.props.mutate({variables: {id: this.props.post.id}})
+    this.props.history.replace('/')
   };
 }
 
@@ -45,8 +45,8 @@ const deleteMutation = gql`
       id
     }
   }
-`;
+`
 
-const PostWithMutation = graphql(deleteMutation)(Post);
+const PostWithMutation = graphql(deleteMutation)(Post)
 
-export default PostWithMutation;
+export default PostWithMutation
