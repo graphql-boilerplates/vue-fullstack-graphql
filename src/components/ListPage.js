@@ -68,6 +68,10 @@ const FeedQuery = gql`query allPosts {
   }
 }`
 
-const ListPageWithData = graphql(FeedQuery)(ListPage)
+const ListPageWithData = graphql(FeedQuery, {
+  options: {
+    fetchPolicy: 'network-only'
+  },
+})(ListPage)
 
 export default ListPageWithData
