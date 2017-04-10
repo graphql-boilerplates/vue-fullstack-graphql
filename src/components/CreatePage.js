@@ -9,12 +9,12 @@ class CreatePage extends React.Component {
   static propTypes = {
     router: React.PropTypes.object,
     addPost: React.PropTypes.func,
-  };
+  }
 
   state = {
     description: '',
     imageUrl: '',
-  };
+  }
 
   render() {
     return (
@@ -64,7 +64,7 @@ class CreatePage extends React.Component {
     await this.props.addPost({variables: {description, imageUrl}})
 
     window.location.pathname = '/'
-  };
+  }
 }
 
 const addMutation = gql`

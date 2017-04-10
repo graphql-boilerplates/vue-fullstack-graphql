@@ -8,7 +8,7 @@ class Post extends React.Component {
     post: React.PropTypes.object,
     mutate: React.PropTypes.func,
     history: React.PropTypes.func,
-  };
+  }
 
   render() {
     return (
@@ -36,7 +36,7 @@ class Post extends React.Component {
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.post.id}})
     this.props.history.replace('/')
-  };
+  }
 }
 
 const deleteMutation = gql`
