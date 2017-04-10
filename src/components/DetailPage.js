@@ -16,7 +16,7 @@ const detailModalStyle = {
 class DetailPage extends React.Component {
   static propTypes = {
     data: React.PropTypes.object,
-  };
+  }
 
   render() {
     if (this.props.data.loading) {
@@ -77,8 +77,7 @@ class DetailPage extends React.Component {
 
     // post is gone, so remove it from history stack
     this.props.history.replace('/')
-    this.props.data.refetch()
-  };
+  }
 }
 
 const deleteMutation = gql`
