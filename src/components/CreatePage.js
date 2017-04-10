@@ -1,7 +1,6 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
-import {graphql} from 'react-apollo'
-import gql from 'graphql-tag'
+import { withRouter } from 'react-router-dom'
+import { gql, graphql} from 'react-apollo'
 import Modal from 'react-modal'
 import modalStyle from '../constants/modalStyle'
 

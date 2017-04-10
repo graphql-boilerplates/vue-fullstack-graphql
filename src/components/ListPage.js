@@ -1,8 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Post from '../components/Post'
-import {graphql} from 'react-apollo'
-import gql from 'graphql-tag'
+import { gql, graphql } from 'react-apollo'
 
 class ListPage extends React.Component {
   static propTypes = {
