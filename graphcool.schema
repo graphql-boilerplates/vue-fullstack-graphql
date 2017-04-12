@@ -1,7 +1,0 @@
-type Post {
-  createdAt: DateTime
-  description: String!
-  id: ID!
-  imageUrl: String!
-  updatedAt: DateTime
-}

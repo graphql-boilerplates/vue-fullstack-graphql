@@ -20,6 +20,7 @@ class Post extends React.Component {
           style={{
             backgroundImage: `url(${this.props.post.imageUrl})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
             paddingBottom: '100%',
           }}
         />

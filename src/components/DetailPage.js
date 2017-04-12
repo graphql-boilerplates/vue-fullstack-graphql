@@ -58,6 +58,7 @@ class DetailPage extends React.Component {
             style={{
               backgroundImage: `url(${Post.imageUrl})`,
               backgroundSize: 'cover',
+              backgroundPosition: 'center',
               paddingBottom: '100%',
             }}
           />
