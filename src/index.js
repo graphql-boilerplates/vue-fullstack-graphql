@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import ListPage from './components/ListPage'
 import CreatePage from './components/CreatePage'
 import DetailPage from './components/DetailPage'
-import { Router, Route, browserHistory } from 'react-router'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
-import { ApolloProvider } from 'react-apollo'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import ApolloClient, {createNetworkInterface} from 'apollo-client'
+import {ApolloProvider} from 'react-apollo'
 import 'tachyons'
 import './index.css'
 
@@ -13,17 +13,19 @@ import './index.css'
 // Info: https://github.com/graphcool-examples/react-apollo-instagram-example#2-create-graphql-api-with-graphcool
 const networkInterface = createNetworkInterface({ uri: '__SIMPLE_API_ENDPOINT__' });
 
-const client = new ApolloClient({ networkInterface })
+const client = new ApolloClient({networkInterface})
 
-ReactDOM.render((
+ReactDOM.render(
   <ApolloProvider client={client}>
-    <Router history={browserHistory}>
-      <Route path='/' component={ListPage}>
-        <Route path='create' component={CreatePage} />
-        <Route path='post/:id' component={DetailPage} />
-      </Route>
+    <Router>
+      <div>
+
+        <Route exact path='/' component={ListPage} />
+        <Route path='/create' component={CreatePage} />
+        <Route path='/post/:id' component={DetailPage} />
+
+      </div>
     </Router>
-  </ApolloProvider>
-  ),
-  document.getElementById('root')
+  </ApolloProvider>,
+  document.getElementById('root'),
 )

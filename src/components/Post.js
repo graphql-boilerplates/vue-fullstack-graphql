@@ -1,17 +1,15 @@
 import React from 'react'
-import { graphql } from 'react-apollo'
-import gql from 'graphql-tag'
-import {Link} from 'react-router'
+import { Link } from 'react-router-dom'
+import { gql, graphql } from 'react-apollo'
 
 class Post extends React.Component {
-
   static propTypes = {
     post: React.PropTypes.object,
     mutate: React.PropTypes.func,
-    refresh: React.PropTypes.func,
+    history: React.PropTypes.func,
   }
 
-  render () {
+  render() {
     return (
       <Link
         className='bg-white ma3 box post flex flex-column no-underline br2'
@@ -22,6 +20,7 @@ class Post extends React.Component {
           style={{
             backgroundImage: `url(${this.props.post.imageUrl})`,
             backgroundSize: 'cover',
+            backgroundPosition: 'center',
             paddingBottom: '100%',
           }}
         />
@@ -31,12 +30,12 @@ class Post extends React.Component {
       </Link>
     )
   }
-          //<span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
+  //<span className='red f6 pointer dim' onClick={this.handleDelete}>Delete</span>
 
+  // not currently used.
   handleDelete = async () => {
     await this.props.mutate({variables: {id: this.props.post.id}})
-
-    this.props.refresh()
+    this.props.history.replace('/')
   }
 }
 
