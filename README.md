@@ -1,4 +1,4 @@
-# react-apollo-instagram-example
+# react-apollo-instagram-quickstart
 
 * [React](https://facebook.github.io/react/): Frontend framework for building user interfaces
 * [Apollo Client](https://github.com/apollographql/apollo-client): Fully-featured, production ready caching GraphQL client
@@ -10,13 +10,13 @@
 
 ## Quickstart
 
-For more information on how to get started [refer to the full react-apollo-instagram tutorial](https://www.graph.cool/docs/quickstart/react-apollo-instagram-example).
+For more information on how to get started [refer to the full react-apollo-instagram tutorial](https://www.graph.cool/docs/quickstart/).
 
 ### 1. Clone example repository
 
 ```sh
-git clone https://github.com/graphcool-examples/react-apollo-instagram-example.git
-cd react-apollo-instagram-example
+git clone https://github.com/graphcool-examples/react-apollo-instagram-quickstart.git
+cd react-apollo-instagram-quickstart
 ```
 
 ### 2. Create GraphQL API with [`graphcool`](https://www.npmjs.com/package/graphcool)
@@ -26,7 +26,7 @@ cd react-apollo-instagram-example
 npm install -g graphcool
 
 # Create a new project based on the Instagram schema
-graphcool init --url http://graphqlbin.com/instagram.graphql
+graphcool init --schema http://graphqlbin.com/instagram.graphql
 ```
 
 This creates a GraphQL API for the following schema:
@@ -47,7 +47,7 @@ Copy the `Simple API` endpoint to `./src/index.js` as the `uri` argument in the 
 const networkInterface = createNetworkInterface({ uri: '__SIMPLE_API_ENDPOINT__' })
 ```
 
-### 4. Install depdendencies & run locally
+### 4. Install dependencies & run locally
 
 ```sh
 yarn install
@@ -57,8 +57,8 @@ yarn start # open http://localhost:3000 in your browser
 ## Next steps
 
 * [Advanced GraphQL features](x)
-* [Authentication & Permissions](x)
-* [Implementing business logic with serverless functions](x)
+* [Authentication & Permissions](https://www.graph.cool/docs/reference/authorization/overview-iegoo0heez/)
+* [Implementing business logic with serverless functions](https://graph.cool/docs/reference/functions/overview-boo6uteemo/)
 
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
