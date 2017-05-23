@@ -1,0 +1,4 @@
+type Post {
+  description: String!
+  imageUrl: String!
+}
