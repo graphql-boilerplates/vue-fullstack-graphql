@@ -17,7 +17,7 @@ For more information on how to get started [refer to the full vue-apollo-instagr
 
 ```sh
 git clone https://github.com/graphcool-examples/vue.git
-cd vue/quickstart-with-apollo
+cd vue-graphql/quickstart-with-apollo
 ```
 
 ### 2. Create GraphQL API with [`graphcool`](https://www.npmjs.com/package/graphcool)
