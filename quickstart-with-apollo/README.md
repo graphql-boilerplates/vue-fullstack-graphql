@@ -16,7 +16,7 @@ For more information on how to get started [refer to the full vue-apollo-instagr
 ### 1. Clone example repository
 
 ```sh
-git clone https://github.com/graphcool-examples/vue.git
+git clone https://github.com/graphcool-examples/vue-graphql.git
 cd vue-graphql/quickstart-with-apollo
 ```
 

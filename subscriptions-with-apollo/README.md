@@ -13,7 +13,7 @@ Subscriptions allow you to bring realtime functionality into your app. You can l
 ### 1. Clone example repository
 
 ```sh
-git clone https://github.com/graphcool-examples/vue.git
+git clone https://github.com/graphcool-examples/vue-graphql.git
 cd vue-graphql/subscriptions-with-apollo
 ```
 
