@@ -32,8 +32,6 @@ const apolloProvider = new VueApollo({
   defaultClient: apolloClient,
 })
 
-const ensureReady = apolloProvider.collect()
-
 // Start the app
 new Vue({
   el: '#app',
