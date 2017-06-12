@@ -32,25 +32,18 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/nikolasburk/" target="_blank">
   <img src="https://github.com/nikolasburk.png?size=64" width="64" height="64" alt="nikolasburk">
 </a>
-<a href="https://github.com/schickling/" target="_blank">
-  <img src="https://github.com/schickling.png?size=64" width="64" height="64" alt="schickling">
-</a>
 <a href="https://github.com/marktani/" target="_blank">
   <img src="https://github.com/marktani.png?size=64" width="64" height="64" alt="marktani">
-</a>
-<a href="https://github.com/brene/" target="_blank">
-  <img src="https://github.com/brene.png?size=64" width="64" height="64" alt="brene">
-</a>
-<a href="https://github.com/100ideas/" target="_blank">
-  <img src="https://github.com/100ideas.png?size=64" width="64" height="64" alt="100ideas">
-</a>
-<a href="https://github.com/timsuchanek/" target="_blank">
-  <img src="https://github.com/timsuchanek.png?size=64" width="64" height="64" alt="timsuchanek">
 </a>
 <a href="https://github.com/gmanfredi/" target="_blank">
   <img src="https://github.com/gmanfredi.png?size=64" width="64" height="64" alt="gmanfredi">
 </a>
-
+<a href="https://github.com/srhise/" target="_blank">
+  <img src="https://github.com/srhise.png?size=64" width="64" height="64" alt="srhise">
+</a>
+<a href="https://github.com/jharmon141/" target="_blank">
+  <img src="https://github.com/jharmon141.png?size=64" width="64" height="64" alt="jharmon141">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
