@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='container'>
     <img :src='post.imageUrl' v-bind:style='image'>
     <div>{{ post.description }}</div>
   </div>
@@ -23,3 +23,10 @@
     },
   }
 </script>
+<style>
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+    margin:10px;
+}
+</style>
