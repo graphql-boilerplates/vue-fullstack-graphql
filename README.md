@@ -44,6 +44,9 @@ A big thank you to all contributors and supporters of this repository 💚
 <a href="https://github.com/jharmon141/" target="_blank">
   <img src="https://github.com/jharmon141.png?size=64" width="64" height="64" alt="jharmon141">
 </a>
+<a href="https://github.com/mrokt/" target="_blank">
+  <img src="https://github.com/mrokt.png?size=64" width="64" height="64" alt="mrokt">
+</a>
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
