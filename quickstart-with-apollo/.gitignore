@@ -9,3 +9,6 @@ logs
 npm-debug.log*
 
 .idea/
+
+# Graphcool project file
+project.graphcool
