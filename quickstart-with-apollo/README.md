@@ -26,6 +26,9 @@ cd vue-graphql/quickstart-with-apollo
 # Install Graphcool CLI
 npm install -g graphcool
 
+# Remove default `project.graphcool`
+rm project.graphcool
+
 # Create a new project based on the Instagram schema
 graphcool init --schema http://graphqlbin.com/instagram.graphql
 ```
