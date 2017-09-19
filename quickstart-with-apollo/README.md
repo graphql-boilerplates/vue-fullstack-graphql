@@ -22,7 +22,6 @@ cd vue-graphql/quickstart-with-apollo
 
 ### 2. Create GraphQL API with [`graphcool`](https://www.npmjs.com/package/graphcool)
 
-
 #### 2.1. Create Graphcool project
 
 ```sh
