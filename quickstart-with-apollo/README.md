@@ -91,6 +91,7 @@ yarn start # open http://localhost:3000 in your browser
 * [Advanced GraphQL features](https://www.graph.cool/docs/tutorials/advanced-features-eath7duf7d/)
 * [Authentication & Permissions](https://www.graph.cool/docs/reference/authorization/overview-iegoo0heez/)
 * [Implementing business logic with serverless functions](https://www.graph.cool/docs/reference/functions/overview-boo6uteemo/)
+* [Dive deeper into GraphQL on How to GraphQL](https://www.howtographql.com)
 
 ## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
 
