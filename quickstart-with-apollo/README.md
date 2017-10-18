@@ -52,10 +52,14 @@ Next, you need to define your data model inside the newly created `types.graphql
 Replace the current contents in `types.graphql` with the following type definition (you can delete the predefined `User` type):
 
 ```graphql
-type Post {
-  id: ID! @isUnique
-  createdAt: DateTime!
-  updatedAt: DateTime!
+type Post @model {
+  # Required system field
+  id: ID! @isUnique # read-only (managed by Graphcool)
+
+  # Optional system fields (remove if not needed)
+  createdAt: DateTime! # read-only (managed by Graphcool)
+  updatedAt: DateTime! # read-only (managed by Graphcool)
+
   description: String!
   imageUrl: String!
 }
@@ -87,6 +91,7 @@ const networkInterface = createNetworkInterface({ uri: '__SIMPLE_API_ENDPOINT__'
 ### 6. Install dependencies & run locally
 
 ```sh
+cd ..
 yarn install
 yarn start # open http://localhost:3000 in your browser
 ```
