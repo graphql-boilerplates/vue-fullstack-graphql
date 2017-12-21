@@ -1,12 +1,14 @@
-❌ This project is currently in a **broken** state ❌
-
-**PRs are more than welcome.**
-
 # vue-fullstack-apollo-basic
 
 🚀 Basic starter code for a fullstack app based on Vue, GraphQL & Apollo Client.
 
 ![](https://imgur.com/LG6r1q1.png)
+
+## TODO
+
+- [ ] fix runtime issues
+- [ ] update to Apollo Client 2.0
+- [ ] enable in [ https://github.com/graphql-cli/graphql-cli/blob/master/src/cmds/create/boilerplates.ts](https://github.com/graphql-cli/graphql-cli/blob/master/src/cmds/create/boilerplates.ts)
 
 ## Technologies
 
