@@ -39,7 +39,7 @@
 
 <script>
   import gql from 'graphql-tag'
-  const createPost = gql `
+  const CREATE_POST = gql `
     mutation createPost($description: String!, $imageUrl: String!) {
       createPost(description: $description, imageUrl: $imageUrl) {
         id
@@ -66,7 +66,7 @@
   
         // Mutation
         this.$apollo.mutate({
-          mutation: createPost,
+          mutation: CREATE_POST,
           variables: {
             description,
             imageUrl,

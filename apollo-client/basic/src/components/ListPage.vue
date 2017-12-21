@@ -6,7 +6,7 @@
 
 <template v-else>
   <ul>
-    <li v-for="post in allPosts" :key="post.id">
+    <li v-for="post in feed" :key="post.id">
       <post :post='post' class="post" />
     </li>
   </ul>
@@ -53,9 +53,9 @@
   import Post from './Post.vue'
   
   // GraphQL query
-  const FeedQuery = gql `
-    query allPosts {
-      allPosts(orderBy: createdAt_DESC) {
+  const FEED_QUERY = gql `
+    query feed {
+      feed {
         id
         imageUrl
         description
@@ -67,13 +67,13 @@
   export default {
     // Local state
     data: () => ({
-      allPosts: {},
+      feed: {},
       loading: 0,
     }),
     // Apollo GraphQL
     apollo: {
-      allPosts: {
-        query: FeedQuery,
+      feed: {
+        query: FEED_QUERY,
         loadingKey: 'loading',
       },
     },
