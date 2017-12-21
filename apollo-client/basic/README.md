@@ -1,3 +1,7 @@
+❌ This project is currently in a **broken** state ❌
+
+**PRs are more than welcome.**
+
 # vue-fullstack-apollo-basic
 
 🚀 Basic starter code for a fullstack app based on Vue, GraphQL & Apollo Client.

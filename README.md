@@ -2,7 +2,7 @@
 
 🚀 Starter projects for fullstack applications based on Vue.js & GraphQL.
 
-![](https://imgur.com/qovPW7f.png)
+![](https://imgur.com/7KD89KW.png)
 
 ## Quickstart
 
@@ -11,7 +11,7 @@
 [**Apollo Client**](https://www.apollographql.com/client/):
 
 - `minimal` (_coming soon_): Minimal boilerplate with basic "Hello World" functionality
-- [`basic`](./apollo-client/basic): Basic boilerplate based on a simple data model and with a GraphQL database
+- [`basic`](./apollo-client/basic) (_needs fix_): Basic boilerplate based on a simple data model and with a GraphQL database
 - `advanced` (_coming soon_): Advanced boilerplate with a GraphQL database, authentication and realtime subscriptions
 
 [**Relay Modern**](https://facebook.github.io/relay/):
