@@ -3,9 +3,7 @@ import App from './App.vue'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import VueApollo from 'vue-apollo'
 
-// Paste your endpoint for the Simple API here.
-// Info: https://github.com/graphcool-examples/vue-apollo-instagram-example#2-create-graphql-api-with-graphcool
-const networkInterface = createNetworkInterface({ uri: '__SIMPLE_API_ENDPOINT__'});
+const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000'});
 
 const apolloClient = new ApolloClient({
   networkInterface,
