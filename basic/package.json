@@ -9,7 +9,7 @@
   "dependencies": {
     "apollo-client": "1.9.3",
     "vue": "2.5.13",
-    "vue-apollo": "2.1.0-rc.8"
+    "vue-apollo": "3.0.0-alpha.2"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
