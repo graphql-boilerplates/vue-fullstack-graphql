@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "babel-core": "6.26.0",
-    "babel-loader": "6.4.1",
+    "babel-loader": "7.1.2",
     "babel-preset-es2015": "6.24.1",
     "cross-env": "1.0.8",
     "css-loader": "0.28.8",
