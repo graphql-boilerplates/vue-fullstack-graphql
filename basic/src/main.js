@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import VueApollo from 'vue-apollo'
+import router from './router'
 
 const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000'});
 
@@ -20,5 +21,6 @@ const apolloProvider = new VueApollo({
 new Vue({
   el: '#app',
   apolloProvider,
+  router,
   render: h => h(App)
-})
+}).$mount('#app')

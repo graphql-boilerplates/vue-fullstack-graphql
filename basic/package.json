@@ -1,5 +1,6 @@
 {
   "name": "vue-apollo-instagram-example",
+  "version": "0.0.1",
   "description": ":camera: Instagram clone built with Vue 2 & Apollo Client",
   "private": true,
   "scripts": {
@@ -9,7 +10,9 @@
   "dependencies": {
     "apollo-client": "1.9.3",
     "vue": "2.5.13",
-    "vue-apollo": "2.1.0-rc.8"
+    "vue-apollo": "2.1.0-rc.8",
+    "vue-router": "^3.0.1",
+    "vue-template-compiler": "2.5.13"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
@@ -18,7 +21,7 @@
     "cross-env": "1.0.8",
     "css-loader": "0.28.9",
     "file-loader": "0.11.2",
-    "vue-loader": "9.9.5",
+    "vue-loader": "14.1.0",
     "webpack": "2.7.0",
     "webpack-dev-server": "2.11.1"
   }

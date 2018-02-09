@@ -9,7 +9,12 @@ module.exports = {
     filename: 'build.js'
   },
   resolve: {
+    extensions: ['*', '.js', '.vue', '.json'],
     modules: ['src', 'node_modules'],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js',
+      'components': path.resolve(__dirname, './src/components')
+    }
   },
   module: {
     rules: [

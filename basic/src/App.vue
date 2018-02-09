@@ -1,22 +1,13 @@
 <template>
-  <div class="app">
-  <create/>
-    <feed/>
-    
+  <div id="app">
+    <router-view/>
   </div>
 </template>
 
 <script>
-import ListPage from './components/ListPage.vue'
-import CreatePost from './components/CreatePost.vue'
-
-export default {
-  name: 'app',
-  components: {
-    'feed': ListPage,
-    'create': CreatePost,
-  },
-}
+  export default {
+    name: 'app'
+  }
 </script>
 
 <style>
