@@ -17,7 +17,7 @@ export default new Router({
       component: FeedPage
     },
     {
-        path: '/detail',
+        path: '/detail/:id',
         name: 'Detail',
         component: DetailPage
     },

@@ -1,184 +1,91 @@
 <template>
-  <div class='drafts'>
-    <div class="modal-mask" v-if="showModal" @close="showModal = false">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-  
-          <div class="modal-header">
-            <slot name="header">
-              Add New Photo
-            </slot>
-          </div>
-  
-          <div class="modal-body">
-            <slot name="body">
-              <input v-model="description" placeholder="Description">
-              <input v-model="imageUrl" placeholder="Image url">
-              <button @click="create">Create Post</button>
-            </slot>
-          </div>
-  
-          <div class="modal-footer">
-            <slot name="footer">
-              
-              <button  @click="showModal = false">
-                  Close Modal
-                </button>
-            </slot>
-          </div>
+  <div class="drafts">
+    <template v-if="loading > 0">
+        <div className="flex w-100 h-100 items-center justify-center pt7">
+          <div>Loading...</div>
         </div>
-      </div>
+
+</template>
+
+<template v-else>
+  <div className="flex justify-between items-center">
+          <h1>Drafts</h1>
     </div>
-    <div class='createPost' @click="showModal = true">
-  
-      <img src="http://www.startuppassion.eu/wp-content/uploads/2017/03/plus-sign.png" class="plusImage" alt=""><br>
-      <button class='newPost' >NEW POST</button>
-    </div>
+  <ul>
+    <li v-for="post in drafts" :key="post.id">
+      <post :post='post' class="post" />
+    </li>
+  </ul>
+</template>
   </div>
 </template>
 
-<script>
-  import gql from 'graphql-tag'
-  const CREATE_POST = gql `
-    mutation createPost($description: String!, $imageUrl: String!) {
-      createPost(description: $description, imageUrl: $imageUrl) {
-        id
-        imageUrl
-        description
-      }
-    }
-  `
-  export default {
-    data: () => ({
-      description: '',
-      imageUrl: '',
-      showModal: false,
-    }),
-  
-    // Attribute
-    methods: {
-      create() {
-        const description = this.description
-        const imageUrl = this.imageUrl
-  
-        this.description = ''
-        this.imageUrl = ''
-  
-        // Mutation
-        this.$apollo.mutate({
-          mutation: CREATE_POST,
-          variables: {
-            description,
-            imageUrl,
-          },
-          updateQueries: {
-            allPosts: (prev, {
-              mutationResult
-            }) => {
-              return {
-                // append at head of list because we sort the posts reverse chronological
-                allPosts: [mutationResult.data.createPost, ...prev.allPosts],
-              }
-            },
-          },
-        }).then((data) => {
-          // Result
-          console.log(data);
-          this.showModal=false;
-        }).catch((error) => {
-          // Error
-          console.error(error)
-        })
-      },
-    },
-  }
-</script>
-
 <style>
-  .createPost {
+  /*.post {
+    margin-bottom: 20px;
+    background-color:gray;
+    border-radius:20px;
+    border-shadow
+  }*/
+  
+  .post {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     width: 300px;
     height: 300px;
-    margin-top: 35px;
     float: left;
   }
   
-  .createPost:hover {
+  ul {
+    list-style: none outside none;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  
+  /* On mouse-over, add a deeper shadow */
+  
+  .post:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
-  
-  .newPost {
-    border: none;
-    color: gray;
-    background-color: white;
-  }
-  
-  .plusImage {
-    opacity: 0.4;
-    margin-top: 25%;
-    width: 25%;
-    height: 25%;
-  }
-  
-  .modal-mask {
-  position: fixed;
-  z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .5);
-  display: table;
-  transition: opacity .3s ease;
-}
-
-.modal-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.modal-container {
-  width: 400px;
-  height: 200px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
-.modal-body {
-  margin: 15%;
-}
-.modal-enter {
-  opacity: 0;
-}
-.modal-footer{
-  float:right;
-}
-.modal-leave-active {
-  opacity: 0;
-}
-
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-  /*
-  .create {
-    text-align: center;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-  }*/
 </style>
+
+<script>
+  import gql from 'graphql-tag'
+  import Post from './Post.vue'
+  
+  // GraphQL query
+  const DRAFTS_QUERY = gql`
+    query DraftsQuery {
+        drafts {
+        id
+        text
+        title
+        isPublished
+        }
+    }
+   `
+  
+  // Component def
+  export default {
+    // Local state
+    data: () => ({
+      drafts: {},
+      loading: 0,
+    }),
+    // Apollo GraphQL
+    apollo: {
+      drafts: {
+        query: DRAFTS_QUERY,
+        loadingKey: 'loading',
+      },
+    },
+    components: {
+      // <my-component> will only be available in parent's template
+      'post': Post
+    }
+  }
+</script>

@@ -2,7 +2,7 @@
 
 <br />
 
-![](https://camo.githubusercontent.com/f85ca433fc186edbd38dbac7ead9f77ae26b7d4b/68747470733a2f2f696d6775722e636f6d2f374b4438394b572e706e67)
+![](https://camo.githubusercontent.com/e78e52aa36ff76ef5e142bfeced3b5f657b3fc26/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f3830302f312a483941414e6f6f664c716a53313058643554775259772e706e67)
 
 <div align="center"><strong>Bootstrap your fullstack GraphQL app within seconds</strong></div>
 <div align="center">GraphQL boilerplates provide the perfect foundation for your GraphQL server, no matter if you're just getting started with GraphQL or aim to build a fully-fledged application.</div>

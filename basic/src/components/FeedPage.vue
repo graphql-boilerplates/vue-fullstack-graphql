@@ -1,10 +1,14 @@
 <template>
   <div class="feed">
     <template v-if="loading > 0">
-        Loading...
+        <div className="flex w-100 h-100 items-center justify-center pt7">
+          <div>Loading...</div>
+        </div>
+
 </template>
 
 <template v-else>
+  <h1>Feed</h1>
   <ul>
     <li v-for="post in feed" :key="post.id">
       <post :post='post' class="post" />
@@ -36,7 +40,6 @@
   }
   
   li {
-    position: relative;
     display: inline;
   }
   
@@ -57,8 +60,9 @@
     query feed {
       feed {
         id
-        imageUrl
-        description
+        text
+        title
+        isPublished
       }
     }
   `

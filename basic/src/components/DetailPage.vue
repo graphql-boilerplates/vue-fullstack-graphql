@@ -1,90 +1,110 @@
 <template>
-  <div class='detail'>
-    <div class="modal-mask" v-if="showModal" @close="showModal = false">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-  
-          <div class="modal-header">
-            <slot name="header">
-              Add New Photo
-            </slot>
-          </div>
-  
-          <div class="modal-body">
-            <slot name="body">
-              <input v-model="description" placeholder="Description">
-              <input v-model="imageUrl" placeholder="Image url">
-              <button @click="create">Create Post</button>
-            </slot>
-          </div>
-  
-          <div class="modal-footer">
-            <slot name="footer">
-              
-              <button  @click="showModal = false">
-                  Close Modal
-                </button>
-            </slot>
-          </div>
+  <div class="detail" >
+    <template v-if="loading > 0">
+        <div className="flex w-100 h-100 items-center justify-center pt7">
+          <div>Loading...</div>
         </div>
-      </div>
-    </div>
-    <div class='createPost' @click="showModal = true">
-  
-      <img src="http://www.startuppassion.eu/wp-content/uploads/2017/03/plus-sign.png" class="plusImage" alt=""><br>
-      <button class='newPost' >NEW POST</button>
-    </div>
+    </template>
+
+    <template v-else>
+        <h1 className="f3 black-80 fw4 lh-solid">{{post.title}}</h1>
+        <p className="black-80 fw3">{{post.text}}</p>
+        <template v-if="post.isPublished">
+            <div>
+                <a class="f6 dim br1 ba ph3 pv2 mb2 dib black pointer" @click="deletePost" >
+                    Delete
+                </a>
+            </div>
+        </template>
+        <template v-else>
+            <div>
+                <a class="f6 dim br1 ba ph3 pv2 mb2 dib black pointer" @click="publishDraft" >
+                    Publish
+                </a>
+            </div>
+        </template>
+    </template>
   </div>
 </template>
-
 <script>
-  import gql from 'graphql-tag'
-  const CREATE_POST = gql `
-    mutation createPost($description: String!, $imageUrl: String!) {
-      createPost(description: $description, imageUrl: $imageUrl) {
-        id
-        imageUrl
-        description
-      }
-    }
-  `
+    import gql from 'graphql-tag'
+    const POST_QUERY = gql`
+        query PostQuery($id: ID!) {
+                post(id: $id) {
+                id
+                title
+                text
+                isPublished
+                }
+        }
+    `
+
+    const PUBLISH_MUTATION = gql`
+        mutation publish($id: ID!) {
+            publish(id: $id) {
+            id
+            isPublished
+            }
+        }
+    `
+
+    const DELETE_MUTATION = gql`
+        mutation deletePost($id: ID!) {
+            deletePost(id: $id) {
+            id
+            }
+        }
+    `
   export default {
     data: () => ({
-      description: '',
-      imageUrl: '',
-      showModal: false,
+      post: {},
+      loading: 0,
     }),
   
+    // Apollo GraphQL
+    apollo: {
+      post: {
+        query: POST_QUERY,
+        loadingKey: 'loading',
+        variables() {
+            return {
+                id: this.$route.params.id,
+            }
+        }
+      },
+    },
+    
     // Attribute
     methods: {
-      create() {
-        const description = this.description
-        const imageUrl = this.imageUrl
-  
-        this.description = ''
-        this.imageUrl = ''
-  
+      deletePost() {
         // Mutation
         this.$apollo.mutate({
-          mutation: CREATE_POST,
+          mutation: DELETE_MUTATION,
           variables: {
-            description,
-            imageUrl,
-          },
-          updateQueries: {
-            allPosts: (prev, {
-              mutationResult
-            }) => {
-              return {
-                // append at head of list because we sort the posts reverse chronological
-                allPosts: [mutationResult.data.createPost, ...prev.allPosts],
-              }
-            },
+            id: this.$route.params.id,
           },
         }).then((data) => {
           // Result
           console.log(data);
-          this.showModal=false;
+          router.push({ path: 'Feed' })
+        }).catch((error) => {
+          // Error
+          console.error(error)
+        })
+      },
+      publishDraft() {
+        const postId = this.$route.params.id
+  
+        // Mutation
+        this.$apollo.mutate({
+          mutation: PUBLISH_MUTATION,
+          variables: {
+            id: this.$route.params.id,
+          },
+        }).then((data) => {
+          // Result
+          console.log(data);
+          router.push({ path: 'Drafts' })
         }).catch((error) => {
           // Error
           console.error(error)
@@ -182,3 +202,5 @@
     flex-direction: column;
   }*/
 </style>
+
+
