@@ -664,9 +664,9 @@ node-fetch@1.7.3:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
-now@8.5.4:
-  version "8.5.4"
-  resolved "https://registry.yarnpkg.com/now/-/now-8.5.4.tgz#48094ed25c54a9e50c1a0b087000872df7025dd8"
+now@9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/now/-/now-9.3.0.tgz#4d9e5ae58d8b7a0ae950ad59316a22e59eb049a5"
 
 object-assign@^4:
   version "4.1.1"
