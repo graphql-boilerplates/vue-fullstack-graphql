@@ -60,7 +60,7 @@
       post: {},
       loading: 0,
     }),
-  
+
     // Apollo GraphQL
     apollo: {
       post: {
@@ -73,7 +73,7 @@
         }
       },
     },
-    
+
     // Attribute
     methods: {
       deletePost() {
@@ -86,7 +86,7 @@
         }).then((data) => {
           // Result
           console.log(data);
-          router.push({ path: 'Feed' })
+          this.$router.push({ path: 'Feed' })
         }).catch((error) => {
           // Error
           console.error(error)
@@ -94,7 +94,6 @@
       },
       publishDraft() {
         const postId = this.$route.params.id
-  
         // Mutation
         this.$apollo.mutate({
           mutation: PUBLISH_MUTATION,
@@ -104,7 +103,7 @@
         }).then((data) => {
           // Result
           console.log(data);
-          router.push({ path: 'Drafts' })
+          this.$router.push({ path: 'Drafts' })
         }).catch((error) => {
           // Error
           console.error(error)
@@ -124,24 +123,24 @@
     margin-top: 35px;
     float: left;
   }
-  
+
   .createPost:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   .newPost {
     border: none;
     color: gray;
     background-color: white;
   }
-  
+
   .plusImage {
     opacity: 0.4;
     margin-top: 25%;
     width: 25%;
     height: 25%;
   }
-  
+
   .modal-mask {
   position: fixed;
   z-index: 9998;
