@@ -1,12 +1,18 @@
 <template>
-  <div class="feed">
+  <div class="drafts">
     <template v-if="loading > 0">
-        Loading...
+        <div className="flex w-100 h-100 items-center justify-center pt7">
+          <div>Loading...</div>
+        </div>
+
 </template>
 
 <template v-else>
+  <div className="flex justify-between items-center">
+          <h1>Drafts</h1>
+    </div>
   <ul>
-    <li v-for="post in feed" :key="post.id">
+    <li v-for="post in drafts" :key="post.id">
       <post :post='post' class="post" />
     </li>
   </ul>
@@ -36,7 +42,6 @@
   }
   
   li {
-    position: relative;
     display: inline;
   }
   
@@ -53,27 +58,28 @@
   import Post from './Post.vue'
   
   // GraphQL query
-  const FEED_QUERY = gql `
-    query feed {
-      feed {
+  const DRAFTS_QUERY = gql`
+    query DraftsQuery {
+        drafts {
         id
-        imageUrl
-        description
-      }
+        text
+        title
+        isPublished
+        }
     }
-  `
+   `
   
   // Component def
   export default {
     // Local state
     data: () => ({
-      feed: {},
+      drafts: {},
       loading: 0,
     }),
     // Apollo GraphQL
     apollo: {
-      feed: {
-        query: FEED_QUERY,
+      drafts: {
+        query: DRAFTS_QUERY,
         loadingKey: 'loading',
       },
     },

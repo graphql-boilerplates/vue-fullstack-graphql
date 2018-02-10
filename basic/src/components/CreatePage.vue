@@ -1,96 +1,94 @@
 <template>
   <div class='create'>
-    <div class="modal-mask" v-if="showModal" @close="showModal = false">
-      <div class="modal-wrapper">
-        <div class="modal-container">
-  
-          <div class="modal-header">
-            <slot name="header">
-              Add New Photo
-            </slot>
-          </div>
-  
-          <div class="modal-body">
-            <slot name="body">
-              <input v-model="description" placeholder="Description">
-              <input v-model="imageUrl" placeholder="Image url">
-              <button @click="create">Create Post</button>
-            </slot>
-          </div>
-  
-          <div class="modal-footer">
-            <slot name="footer">
-              
-              <button  @click="showModal = false">
-                  Close Modal
-                </button>
-            </slot>
-          </div>
-        </div>
+      <div className="pa4 flex justify-center bg-white">
+        <form v-on:submit.prevent="create">
+          <h1>Create Draft</h1>
+          <input
+            auto-focus
+            class="w-100 pa2 mv2 br2 b--black-20 bw1"
+            v-model="title"
+            placeholder="Title"
+            type="text"
+            value={title}
+          />
+          <textarea
+            class="db w-100 ba bw1 b--black-20 pa2 br2 mb2"
+            cols="50"
+            v-model="text"
+            placeholder="Content"
+            rows="8"
+          />
+
+          <input class="f6 br1 ba ph3 pv2 mb2 dib black pointer disabled"
+            v-bind:class="classObject"
+            type="submit"
+            value="Create"
+          />{{' '}}
+          <a class="f6 pointer">
+            or cancel
+          </a>
+        </form>
       </div>
-    </div>
-    <div class='createPost' @click="showModal = true">
-  
-      <img src="http://www.startuppassion.eu/wp-content/uploads/2017/03/plus-sign.png" class="plusImage" alt=""><br>
-      <button class='newPost' >NEW POST</button>
-    </div>
   </div>
 </template>
 
 <script>
   import gql from 'graphql-tag'
   const CREATE_POST = gql `
-    mutation createPost($description: String!, $imageUrl: String!) {
-      createPost(description: $description, imageUrl: $imageUrl) {
+    mutation CreateDraftMutation($title: String!, $text: String!) {
+      createDraft(title: $title, text: $text) {
         id
-        imageUrl
-        description
+        title
+        text
       }
     }
   `
   export default {
     data: () => ({
-      description: '',
-      imageUrl: '',
-      showModal: false,
+      title: '',
+      text: ''
     }),
   
     // Attribute
     methods: {
       create() {
-        const description = this.description
-        const imageUrl = this.imageUrl
+        const title = this.title
+        const text = this.text
   
-        this.description = ''
-        this.imageUrl = ''
+        this.title = ''
+        this.text = ''
   
         // Mutation
         this.$apollo.mutate({
           mutation: CREATE_POST,
           variables: {
-            description,
-            imageUrl,
-          },
-          updateQueries: {
-            allPosts: (prev, {
-              mutationResult
-            }) => {
-              return {
-                // append at head of list because we sort the posts reverse chronological
-                allPosts: [mutationResult.data.createPost, ...prev.allPosts],
-              }
-            },
+            title,
+            text,
           },
         }).then((data) => {
           // Result
           console.log(data);
-          this.showModal=false;
+          router.push({ path: 'Drafts' })
         }).catch((error) => {
           // Error
+          alert(`Error from ${error}`)
           console.error(error)
         })
       },
     },
+
+    computed: {
+      canPost: function () {
+        return {
+          disabled: !this.text && !this.title
+        }
+      },
+      classObject: function(){
+        return {
+          dim: this.text && this.title
+        }
+      }
+    }
   }
 </script>
 
