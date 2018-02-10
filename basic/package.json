@@ -41,7 +41,7 @@
     "postcss-url": "7.3.0",
     "rimraf": "2.6.2",
     "semver": "5.5.0",
-    "shelljs": "0.7.8",
+    "shelljs": "0.8.1",
     "tachyons": "4.9.1",
     "uglifyjs-webpack-plugin": "1.1.8",
     "url-loader": "0.5.9",
