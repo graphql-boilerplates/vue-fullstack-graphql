@@ -43,21 +43,32 @@
       }
     }
   `
+  const FEED_QUERY = gql `
+    query feed {
+      feed {
+        id
+        text
+        title
+        isPublished
+      }
+    }
+  `
+
   export default {
     data: () => ({
       title: '',
       text: ''
     }),
-  
+
     // Attribute
     methods: {
       create() {
         const title = this.title
         const text = this.text
-  
+
         this.title = ''
         this.text = ''
-  
+
         // Mutation
         this.$apollo.mutate({
           mutation: CREATE_POST,
@@ -65,10 +76,20 @@
             title,
             text,
           },
+          // Update the cache with the result
+          // and then with the real result of the mutation
+          update: (store, { data: { createDraft } }) => {
+            // Read the data from our cache for this query.
+            const data = store.readQuery({ query: FEED_QUERY })
+            // Add our post from the mutation to the end
+            data.tags.push(createDraft)
+            // Write our data back to the cache.
+            store.writeQuery({ query: FEED_QUERY, data })
+          }
         }).then((data) => {
           // Result
           console.log(data);
-          router.push({ path: 'Drafts' })
+          this.$router.push({ path: 'Drafts' })
         }).catch((error) => {
           // Error
           alert(`Error from ${error}`)
@@ -102,24 +123,24 @@
     margin-top: 35px;
     float: left;
   }
-  
+
   .createPost:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   .newPost {
     border: none;
     color: gray;
     background-color: white;
   }
-  
+
   .plusImage {
     opacity: 0.4;
     margin-top: 25%;
     width: 25%;
     height: 25%;
   }
-  
+
   .modal-mask {
   position: fixed;
   z-index: 9998;

@@ -4,7 +4,7 @@ import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import VueApollo from 'vue-apollo'
 import router from './router'
 
-const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000'});
+const networkInterface = createNetworkInterface({ uri: 'https://uniserver.now.sh/'});
 
 const apolloClient = new ApolloClient({
   networkInterface,
