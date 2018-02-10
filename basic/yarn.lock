@@ -271,15 +271,15 @@ atob@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.0.3.tgz#19c7a760473774468f20b2d2d03372ad7d4cbf5d"
 
-autoprefixer@7.2.5:
-  version "7.2.5"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.5.tgz#04ccbd0c6a61131b6d13f53d371926092952d192"
+autoprefixer@7.2.6:
+  version "7.2.6"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-7.2.6.tgz#256672f86f7c735da849c4f07d008abb056067dc"
   dependencies:
-    browserslist "^2.11.1"
-    caniuse-lite "^1.0.30000791"
+    browserslist "^2.11.3"
+    caniuse-lite "^1.0.30000805"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^6.0.16"
+    postcss "^6.0.17"
     postcss-value-parser "^3.2.3"
 
 autoprefixer@^6.3.1:
@@ -1096,7 +1096,7 @@ browserslist@^1.0.1, browserslist@^1.5.2, browserslist@~1.5.1:
   dependencies:
     caniuse-db "^1.0.30000604"
 
-browserslist@^2.1.2, browserslist@^2.11.1:
+browserslist@^2.1.2, browserslist@^2.11.3:
   version "2.11.3"
   resolved "https://registry.yarnpkg.com/browserslist/-/browserslist-2.11.3.tgz#fe36167aed1bbcde4827ebfe71347a2cc70b99b2"
   dependencies:
@@ -1215,9 +1215,13 @@ caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000604:
   version "1.0.30000613"
   resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000613.tgz#639133b7a5380c1416f9701d23d54d093dd68299"
 
-caniuse-lite@^1.0.30000791, caniuse-lite@^1.0.30000792:
+caniuse-lite@^1.0.30000792:
   version "1.0.30000805"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000805.tgz#83a5f21ead01486e67bccca6fae5dca7cde496de"
+
+caniuse-lite@^1.0.30000805:
+  version "1.0.30000807"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000807.tgz#51ea478d07269e9dd4d8c639509df61d2516fa92"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -4480,7 +4484,7 @@ postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0
     source-map "^0.5.6"
     supports-color "^3.1.2"
 
-postcss@^6.0.0, postcss@^6.0.16, postcss@^6.0.8:
+postcss@^6.0.0, postcss@^6.0.17, postcss@^6.0.8:
   version "6.0.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.17.tgz#e259a051ca513f81e9afd0c21f7f82eda50c65c5"
   dependencies:
