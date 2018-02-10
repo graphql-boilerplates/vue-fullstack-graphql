@@ -1,103 +1,79 @@
-# vue-fullstack-apollo-basic
+<h1 align="center"><strong>Boilerplate for a Basic Fullstack GraphQL App with Vue</strong></h1>
 
-🚀 Basic starter code for a fullstack app based on Vue, GraphQL & Apollo Client.
+<br />
 
-![](https://imgur.com/LG6r1q1.png)
+![](https://imgur.com/ousyQaC.png)
 
-## TODO
+<div align="center"><strong>🚀 Bootstrap your fullstack GraphQL app within seconds</strong></div>
+<div align="center">Basic starter kit for a fullstack GraphQL app with Vue and Node.js - based on best practices from the GraphQL community.</div>
 
-- [ ] fix runtime issues
-- [ ] update to Apollo Client 2.0
-- [ ] enable in [ https://github.com/graphql-cli/graphql-cli/blob/master/src/cmds/create/boilerplates.ts](https://github.com/graphql-cli/graphql-cli/blob/master/src/cmds/create/boilerplates.ts)
+## Features
 
-## Technologies
+- **Scalable GraphQL server:** The server uses [`graphql-yoga`](https://github.com/prisma/graphql-yoga) which is based on Apollo Server & Express
+- **Pre-configured Apollo Client:** The project comes with a preconfigured setup for Apollo Client
+- **GraphQL database:** Includes GraphQL database binding to [Prisma](https://www.prismagraphql.com) (running on MySQL)
+- **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
+- **Extensible**: Simple and flexible [data model](./database/datamodel.graphql) – easy to adjust and extend
+- **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
 
-* **Frontend**
-  * [Vue](https://vuejs.org/): Frontend framework for building user interfaces
-  * [Apollo Client](https://github.com/apollographql/apollo-client): Fully-featured, production ready caching GraphQL client
-* **Backend**
-  * [Graphcool](https://www.graph.cool): Powerful GraphQL database
-  * [`graphql-yoga`](https://github.com/graphcool/graphql-yoga/): Fully-featured GraphQL server with focus on easy setup, performance & great developer experience
-  * [`graphcool-binding`](https://github.com/graphcool/graphcool-binding): GraphQL binding for Graphcool services
 
 ## Requirements
 
-You need to have the following things installed:
+You need to have the [GraphQL CLI](https://github.com/graphql-cli/graphql-cli) installed to bootstrap your GraphQL server using `graphql create`:
 
-* Node 8+
-* Graphcool CLI: `npm i -g graphcool@beta`
-* GraphQL CLI: `npm i -g graphql-cli`
-* GraphQL Playground desktop app (optional): [Download](https://github.com/graphcool/graphql-playground/releases)
-
-## Preview
-
-![](http://imgur.com/3S6fUeI.gif)
+```sh
+npm install -g graphql-cli
+```
 
 ## Getting started
 
 ```sh
-# Bootstrap GraphQL server in directory `my-app`, based on `vue-fullstack-basic` boilerplate
+# 1. Bootstrap GraphQL server in directory `my-app`, based on `vue-fullstack-basic` boilerplate
 graphql create my-app --boilerplate vue-fullstack-basic
 
-# Navigate into the new project's `server` directory
+# 2. When prompted, deploy the Prisma service to a _public cluster_
+
+# 3. Navigate into the `server` directory of the new project
 cd my-app/server
 
-# Deploy the Graphcool database & start the server (runs on http://localhost:4000)
-yarn start
+# 4. Start the server
+yarn dev # runs server on http://localhost:4000, and opens GraphQL PLayground
 
-# Navigate back into the project's root directory and launch the Vue app
+# 5. Open a new tab in the terminal and navigate back into my-app;
+# then run the app
 cd ..
-yarn start # open http://localhost:3000 in your browser
+yarn start
 ```
 
-<details>
+## Documentation
 
-<summary>Alternative: Clone repo</summary>
+### Commands
 
-```sh
-TODO
-```
+* `yarn start` starts GraphQL server on `http://localhost:4000`
+* `yarn dev` starts GraphQL server on `http://localhost:4000` _and_ opens GraphQL Playground
+* `yarn playground` opens the GraphQL Playground for the `projects` from [`.graphqlconfig.yml`](./.graphqlconfig.yml)
+* `yarn prisma <subcommand>` gives access to local version of Prisma CLI (e.g. `yarn prisma deploy`)
 
-</details>
+> **Note**: We recommend that you're using `yarn dev` during development as it will give you access to the GraphQL API or your server (defined by the [application schema](./src/schema.graphql)) as well as to the Prisma API directly (defined by the [Prisma database schema](./generated/prisma.graphql)). If you're starting the server with `yarn start`, you'll only be able to access the API of the application schema.
 
-## Docs
+### Server structure
 
-### Project structure
+![](https://imgur.com/95faUsa.png)
 
-#### `/server`
-
-- [`.graphqlconfig.yml`](./server/.graphqlconfig.yml) GraphQL configuration file containing the endpoints and schema configuration. Used by the [`graphql-cli`](https://github.com/graphcool/graphql-cli) and the [GraphQL Playground](https://github.com/graphcool/graphql-playground). See [`graphql-config`](https://github.com/graphcool/graphql-config) for more information.
-- [`graphcool.yml`](./server/graphcool.yml): The root configuration file for your database service ([documentation](https://www.graph.cool/docs/1.0/reference/graphcool.yml/overview-and-example-foatho8aip)).
-
-#### `/server/database`
-
-- [`database/datamodel.graphql`](./server/database/datamodel.graphql) contains the data model that you define for the project (written in [SDL](https://blog.graph.cool/graphql-sdl-schema-definition-language-6755bcb9ce51)).
-- [`database/schema.generated.graphql`](./server/database/schema.generated.graphql) defines the **database schema**. It contains the definition of the CRUD API for the types in your data model and is generated based on your `datamodel.graphql`. **You should never edit this file manually**, but introduce changes only by altering `datamodel.graphql` and run `graphcool deploy`.
-
-#### `/server/src`
-
-- [`src/schema.graphql`](src/schema.graphql) defines your **application schema**. It contains the GraphQL API that you want to expose to your client applications.
-- [`src/index.js`](src/index.js) is the entry point of your server, pulling everything together and starting the `GraphQLServer` from [`graphql-yoga`](https://github.com/graphcool/graphql-yoga).
-
-### Common questions
-
-#### I'm getting a 'Schema could not be fetched.' error after deploying, what gives?
-
-Access to the Graphcool API is secured by a secret. This also applies to the introspection query. Using the latest version of GraphQL Playground, the `Authorization` header should automatically be setup with a proper JWT signing the secret. If that's not the case, you can follow these steps to access your API:
-
-1. Visit http://jwtbuilder.jamiekurtz.com/
-1. Replace the `Key` at the bottom of the page with your `secret` from the [`graphcool.yml`](./server/graphcool.yml#L5)
-1. Click `Create signed JWT` and copy the obtained token
-1. Now, to access the schema, use the `Authorization: Bearer <token>` header, or in the GraphQL Playground set it as JSON:
-    ```json
-    {
-      "Authorization": "Bearer <token>"
-    }
-    ```
-1. Reload the schema in the Playground (the _refresh_-button is located right next to the URL of the server)
-
-> Note: Currently, no content of the signed JWT is verified by the database! This will be implemented [according to this proposal](https://github.com/graphcool/framework/issues/1365) at a later stage.
+| File name 　　　　　　　　　　　　　　| Description 　　　　　　　　<br><br>|
+| :--  | :--         |
+| `├── .graphqlconfig.yml` | Configuration file based on [`graphql-config`](https://github.com/prisma/graphql-config) (e.g. used by GraphQL Playground).|
+| `└── database ` (_directory_) | _Contains all files that are related to the Prisma database service_ |\
+| `　　├── prisma.yml` | The root configuration file for your Prisma database service ([docs](https://www.prismagraphql.com/docs/reference/prisma.yml/overview-and-example-foatho8aip)) |
+| `　　└── datamodel.graphql` | Defines your data model (written in [GraphQL SDL](https://blog.graph.cool/graphql-sdl-schema-definition-language-6755bcb9ce51)) |
+| `└── src ` (_directory_) | _Contains the source files for your GraphQL server_ |
+| `　　├── index.js` | The entry point for your GraphQL server |
+| `　　├── schema.graphql` | The **application schema** defining the API exposed to client applications  |
+| `　　└── generated` (_directory_) | _Contains generated files_ |
+| `　　　　└── prisma.grapghql` | The **Prisma database schema** defining the Prisma GraphQL API  |
 
 ## Contributing
 
-Your feedback is **very helpful**, please share your opinion and thoughts! If you have any questions, join the [`#graphql-boilerplate`](https://graphcool.slack.com/messages/graphql-boilerplate) channel on our [Slack](https://graphcool.slack.com/).
+The GraphQL boilerplates are maintained by the GraphQL community, with official support from the [Apollo](https://dev-blog.apollodata.com) & [Graphcool](https://blog.graph.cool/) teams.
+
+Your feedback is **very helpful**, please share your opinion and thoughts! If you have any questions or want to contribute yourself, join the [`#graphql-boilerplate`](https://graphcool.slack.com/messages/graphql-boilerplate) channel on our [Slack](https://graphcool.slack.com/).
