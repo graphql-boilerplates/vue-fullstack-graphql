@@ -9,7 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "apollo-client": "1.9.3",
+    "apollo-client": "2.2.5",
     "vue": "2.5.13",
     "vue-apollo": "2.1.0-rc.8",
     "vue-router": "3.0.1",
