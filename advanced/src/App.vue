@@ -5,7 +5,16 @@
       <router-link v-bind:to="'/'" exact class="link dim f6 f5-ns dib mr3 black" title="Feed">Feed</router-link>
       <router-link v-bind:to="'/drafts'" exact class="link dim f6 f5-ns dib mr3 black" title="Drafts">Drafts</router-link>
       
-      <router-link v-bind:to="'/create'" exact class="f6 link dim br1 ba ph3 pv2 fr mb2 dib black" title="Drafts">+ Create Draft</router-link>
+      <template v-if="isLoggedin">
+        <router-link v-bind:to="'/create'" exact class="f6 link dim br1 ba ph3 pv2 fr mb2 dib black" title="Drafts">Logout</router-link>
+        <router-link v-bind:to="'/create'" exact class="f6 link dim br1 ba ph3 pv2 fr mr2 mb2 dib black" title="Drafts">+ Create Draft</router-link>
+      </template>
+
+      <template v-else>
+        <router-link v-bind:to="'/signup'" exact class="f6 link dim br1 ba ph3 pv2 fr mb2 dib black" title="Drafts">Sign Up</router-link>
+        <router-link v-bind:to="'/login'" exact class="f6 link dim br1 ba ph3 pv2 fr mr2 mb2 dib black" title="Drafts">Sign In</router-link>
+      </template>
+      
     </nav>
 
     <div class="fl w-100 pl4 pr4">
@@ -15,8 +24,30 @@
 </template>
 
 <script>
+  import { USER_ID, AUTH_TOKEN  } from './constants'
+
   export default {
-    name: 'app'
+    name: 'app',
+    data: () => ({
+      isLoggedin: true,
+    }),
+
+    computed: {
+      userId () {
+        return this.$root.$data.userId
+      },
+      token () {
+        return this.$root.$data.token
+      }
+    },
+    methods: {
+      logout () {
+        localStorage.removeItem(USER_ID)
+        localStorage.removeItem(AUTH_TOKEN)
+        this.$root.$data.userId = localStorage.getItem(USER_ID)
+        this.$root.$data.token = localStorage.getItem(USER_ID)
+      }
+    }
   }
 </script>
 
