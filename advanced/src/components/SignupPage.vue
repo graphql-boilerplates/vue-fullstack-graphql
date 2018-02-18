@@ -14,7 +14,7 @@
                 name="Name"  
                 id="name"
                 v-model="name"
-                autocomplete
+                autocomplete="name"
               />
             </div>
             <div class="mt3">
@@ -24,7 +24,7 @@
                 type="email" 
                 name="email-address"  
                 id="email-address"
-                autocomplete
+                autocomplete='email'
                 v-model="email"
               />
             </div>
@@ -34,6 +34,7 @@
                 class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-80" 
                 type="password" 
                 name="password"  
+                autocomplete='password'
                 id="password" 
                 v-model="password"
               />
@@ -59,7 +60,7 @@
   import { USER_ID, AUTH_TOKEN  } from '../constants'
 
   const SIGNUP_USER = gql `
-    mutation SIGNUP_Mutation($email: String!, $password: String!, $name: String!) {
+    mutation SIGNUP_MUTATION($email: String!, $password: String!, $name: String!) {
       signup(email: $email, password: $password, name: $name) {
         token
         user{
@@ -87,7 +88,7 @@
 
         // Mutation
         this.$apollo.mutate({
-          mutation: SIGNUP_Mutation,
+          mutation: SIGNUP_USER,
           variables: {
             email,
             password,
@@ -96,8 +97,8 @@
         }).then((data) => {
           // Result
           console.log(data);
-          const user = data.login.user.user
-          const token = data.login.token
+          const user = data.signup.user.user
+          const token = data.signup.token
           this.saveUserData(user, token)
           this.$router.push({ path: 'Blog' })
         }).catch((error) => {
