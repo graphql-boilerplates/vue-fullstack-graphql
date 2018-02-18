@@ -15,9 +15,7 @@ import { USER_ID, AUTH_TOKEN } from './constants'
 // Vue production tip config
 Vue.config.productionTip = false
 
-const httpLink = new HttpLink({ uri: 'https://uniserver.now.sh/' })
-
-
+const httpLink = new HttpLink({ uri: 'http://localhost:4000/' })
 
 const middlewareLink = new ApolloLink((operation, forward) => {
   // get the authentication token from local storage if it exists
@@ -35,7 +33,7 @@ const middlewareLink = new ApolloLink((operation, forward) => {
 const httpLinkAuth = middlewareLink.concat(httpLink)
 
 const wsLink = new WebSocketLink({
-  uri: `wss://uniserver.now.sh/`,
+  uri: `wss://localhost:4000/`,
   options: {
     reconnect: true,
     connectionParams: {
@@ -105,9 +103,3 @@ new Vue({
   },
   render: h => h(App)
 }).$mount('#app')
-
-/*
-
-    "start": "webpack-dev-server --inline --hot --port 3000",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-*/

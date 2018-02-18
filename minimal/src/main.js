@@ -1,33 +1,31 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
 
-const networkInterface = createNetworkInterface({ uri: 'https://uniserver.now.sh/'})
+const httpLink = new HttpLink({ uri: 'http://localhost:4000/' })
 
-const apolloClient = new ApolloClient({
-  networkInterface,
+// apollo client setup
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+  connectToDevTools: true
 })
-
-// Vue production tip config
-Vue.config.productionTip = false
 
 // Install the vue plugin
 Vue.use(VueApollo)
 
+// Apollo provider init
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
+  defaultClient: client
 })
 
 // Start the app
 new Vue({
   el: '#app',
-  apolloProvider,
+  provide: apolloProvider.provide(),
+  router,
   render: h => h(App)
 }).$mount('#app')
-
-/*
-
-    "start": "webpack-dev-server --inline --hot --port 3000",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-*/
