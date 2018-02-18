@@ -4,7 +4,10 @@ import DetailPage from 'components/DetailPage'
 import FeedPage from 'components/FeedPage'
 import CreatePage from 'components/CreatePage'
 import DraftsPage from 'components/DraftsPage'
+import SignupPage from 'components/SignupPage'
+import LoginPage from 'components/LoginPage'
 import NotFoundPage from 'components/NotFoundPage'
+import { checkAuth } from '../utils'
 
 Vue.use(Router)
 
@@ -15,23 +18,31 @@ export default new Router({
       path: '/',
       name: 'Feed',
       component: FeedPage
-    },
-    {
+    },{
         path: '/detail/:id',
         name: 'Detail',
         component: DetailPage
-    },
-    {
+    },{
         path: '/create',
         name: 'Create',
-        component: CreatePage
-    },
-    {
+        secure: true,
+        component: CreatePage,
+    },{
         path: '/drafts',
         name: 'Drafts',
-        component: DraftsPage
-    },
-    {   path: '*', 
+        secure: true,
+        component: DraftsPage,
+    },{
+        path: '/login',
+        name: 'Login',
+        unAuth: true,
+        component: LoginPage
+    },{
+        path: '/signup',
+        name: 'Signup',
+        unAuth: true,
+        component: SignupPage
+    },{   path: '*', 
         component: NotFoundPage 
     }
   ]

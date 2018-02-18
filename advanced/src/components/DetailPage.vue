@@ -7,8 +7,18 @@
     </template>
 
     <template v-else>
-        <h1 className="f3 black-80 fw4 lh-solid">{{post.title}}</h1>
-        <p className="black-80 fw3">{{post.text}}</p>
+        <article class="bb b--black-10">
+          <a class="db pv4 ph3 ph0-l no-underline black dim" href="#0">
+            <div class="flex flex-column flex-row-ns">
+              <div class="w-100 w-60-ns pl3-ns">
+                <h1 class="f3 fw1 baskerville mt0 lh-title">{{ post.title }}</h1>
+                <p class="f6 f5-l lh-copy">
+                  {{ post.text }}
+                </p>
+                <p class="f6 lh-copy mv0">By {{ post.author.name }}</p>
+              </div>
+            </div>
+          </a>
         <template v-if="post.isPublished">
             <div>
                 <a class="f6 dim br1 ba ph3 pv2 mb2 dib black pointer" @click="deletePost" >
@@ -23,38 +33,40 @@
                 </a>
             </div>
         </template>
+        </article>
     </template>
   </div>
 </template>
 <script>
-    import gql from 'graphql-tag'
-    const POST_QUERY = gql`
-        query PostQuery($id: ID!) {
-                post(id: $id) {
-                id
-                title
-                text
-                isPublished
-                }
+  import gql from 'graphql-tag'
+  const POST_QUERY = gql`
+    query PostQuery($id: ID!) {
+      post(id: $id) {
+        id
+        title
+        text
+        isPublished
+        author{
+          name
         }
-    `
-
-    const PUBLISH_MUTATION = gql`
-        mutation publish($id: ID!) {
-            publish(id: $id) {
-            id
-            isPublished
-            }
-        }
-    `
-
-    const DELETE_MUTATION = gql`
-        mutation deletePost($id: ID!) {
-            deletePost(id: $id) {
-            id
-            }
-        }
-    `
+      }
+    }
+  `
+  const PUBLISH_MUTATION = gql`
+    mutation publish($id: ID!) {
+      publish(id: $id) {
+        id
+        isPublished
+      }
+    }
+  `
+  const DELETE_MUTATION = gql`
+      mutation deletePost($id: ID!) {
+          deletePost(id: $id) {
+          id
+          }
+      }
+  `
   export default {
     data: () => ({
       post: {},

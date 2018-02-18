@@ -82,7 +82,7 @@
             // Read the data from our cache for this query.
             const data = store.readQuery({ query: FEED_QUERY })
             // Add our post from the mutation to the end
-            data.tags.push(createDraft)
+            data.feed.push(createDraft)
             // Write our data back to the cache.
             store.writeQuery({ query: FEED_QUERY, data })
           }

@@ -27,34 +27,32 @@
   </div>
 </template>
 <script>
-    import gql from 'graphql-tag'
-    const POST_QUERY = gql`
-        query PostQuery($id: ID!) {
-                post(id: $id) {
-                id
-                title
-                text
-                isPublished
-                }
-        }
-    `
-
-    const PUBLISH_MUTATION = gql`
-        mutation publish($id: ID!) {
-            publish(id: $id) {
-            id
-            isPublished
-            }
-        }
-    `
-
-    const DELETE_MUTATION = gql`
-        mutation deletePost($id: ID!) {
-            deletePost(id: $id) {
-            id
-            }
-        }
-    `
+  import gql from 'graphql-tag'
+  const POST_QUERY = gql`
+    query PostQuery($id: ID!) {
+      post(id: $id) {
+        id
+        title
+        text
+        isPublished
+      }
+    }
+  `
+  const PUBLISH_MUTATION = gql`
+    mutation publish($id: ID!) {
+      publish(id: $id) {
+        id
+        isPublished
+      }
+    }
+  `
+  const DELETE_MUTATION = gql`
+    mutation deletePost($id: ID!) {
+      deletePost(id: $id) {
+        id
+      }
+    }
+  `
   export default {
     data: () => ({
       post: {},
@@ -68,7 +66,7 @@
         loadingKey: 'loading',
         variables() {
             return {
-                id: this.$route.params.id,
+              id: this.$route.params.id,
             }
         }
       },
