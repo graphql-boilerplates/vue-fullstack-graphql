@@ -6,7 +6,7 @@
       <router-link v-bind:to="'/drafts'" exact class="link dim f6 f5-ns dib mr3 black" title="Drafts">Drafts</router-link>
       
       <template v-if="isLoggedin">
-        <router-link v-bind:to="'/create'" exact class="f6 link dim br1 ba ph3 pv2 fr mb2 dib black" title="Drafts">Logout</router-link>
+        <a @click="logout" exact class="f6 link dim br1 ba ph3 pv2 fr mb2 dib black" title="Drafts">Logout</a>
         <router-link v-bind:to="'/create'" exact class="f6 link dim br1 ba ph3 pv2 fr mr2 mb2 dib black" title="Drafts">+ Create Draft</router-link>
       </template>
 
@@ -46,6 +46,7 @@
         localStorage.removeItem(AUTH_TOKEN)
         this.$root.$data.userId = localStorage.getItem(USER_ID)
         this.$root.$data.token = localStorage.getItem(AUTH_TOKEN)
+          this.$router.push({ path: '/' })
       }
     }
   }

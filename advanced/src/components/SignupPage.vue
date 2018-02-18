@@ -94,11 +94,11 @@
             password,
             name
           },
-        }).then((data) => {
+        }).then((result) => {
           // Result
-          console.log(data);
-          const user = data.signup.user.user
-          const token = data.signup.token
+          console.log(result);
+          const user = result.data.signup.user
+          const token = result.data.signup.token
           this.saveUserData(user, token)
           this.$router.push({ path: 'Blog' })
         }).catch((error) => {

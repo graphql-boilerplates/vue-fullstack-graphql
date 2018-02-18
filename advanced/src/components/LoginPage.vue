@@ -80,13 +80,13 @@
             email,
             password,
           },
-        }).then((data) => {
+        }).then((result) => {
           // Result
-          console.log(data);
-          const user = data.login.user.user
-          const token = data.login.token
+          console.log(result);
+          const user = result.data.login.user.user
+          const token = result.data.login.token
           this.saveUserData(user, token)
-          this.$router.push({ path: 'Blog' })
+          this.$router.push({ path: '/' })
         }).catch((error) => {
           // Error
           alert(`Error from ${error}`)
@@ -97,7 +97,7 @@
       saveUserData (user, token) {
         localStorage.setItem(USER_ID, user)
         localStorage.setItem(AUTH_TOKEN, token)
-        this.$root.$data.token = localStorage.getItem(USER_TOKEN)
+        this.$root.$data.token = localStorage.getItem(USER_ID)
       }
     },
 
