@@ -13,7 +13,7 @@
                 type="email" 
                 name="email-address"  
                 id="email-address"
-                autocomplete
+                autocomplete="email"
                 v-model="email"
               />
             </div>
@@ -23,6 +23,7 @@
                 class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-80" 
                 type="password" 
                 name="password"
+                autocomplete="password"
                 id="password" 
                 v-model="password"
               />

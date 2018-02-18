@@ -72,6 +72,29 @@ const apolloProvider = new VueApollo({
 // get user authentication token saved after login
 let token = localStorage.getItem(AUTH_TOKEN)
 
+router.beforeEach((to, from, next) => {
+  // Look at all routes
+  router.options.routes.forEach((route) => {
+    // If this is the current route and it's secure
+    if (to.matched[0].path === route.path && route.secure) {
+      // Verify that the user isn't logged in
+      if(!token || token === '' || token === null){
+        // Route back to the landing
+        return next('/login');
+      }
+    }
+    if (to.matched[0].path === route.path && route.unAuth) {
+      // Verify that the user isn't logged in
+      if(token){
+        // Route back to the landing
+        return next('/');
+      }
+    }
+  });
+  // Proceed as normal
+  next();
+});
+
 // Start the app
 new Vue({
   el: '#app',
