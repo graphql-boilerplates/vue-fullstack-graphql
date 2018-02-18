@@ -14,6 +14,7 @@
                 name="Name"  
                 id="name"
                 v-model="name"
+                autocomplete
               />
             </div>
             <div class="mt3">
@@ -23,6 +24,7 @@
                 type="email" 
                 name="email-address"  
                 id="email-address"
+                autocomplete
                 v-model="email"
               />
             </div>

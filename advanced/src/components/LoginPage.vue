@@ -13,6 +13,7 @@
                 type="email" 
                 name="email-address"  
                 id="email-address"
+                autocomplete
                 v-model="email"
               />
             </div>
@@ -21,7 +22,7 @@
               <input 
                 class="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-80" 
                 type="password" 
-                name="password"  
+                name="password"
                 id="password" 
                 v-model="password"
               />
@@ -48,7 +49,7 @@
 
   const LOGIN_USER = gql `
     mutation LoginMutation($email: String!, $password: String!) {
-      login(email: $email, text: $password) {
+      login(email: $email, password: $password) {
         token
         user{
           id
