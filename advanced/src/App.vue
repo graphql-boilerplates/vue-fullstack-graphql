@@ -29,7 +29,7 @@
   export default {
     name: 'app',
     data: () => ({
-      isLoggedin: true,
+      isLoggedin: localStorage.getItem(AUTH_TOKEN) ? true : false,
     }),
 
     computed: {
@@ -45,7 +45,7 @@
         localStorage.removeItem(USER_ID)
         localStorage.removeItem(AUTH_TOKEN)
         this.$root.$data.userId = localStorage.getItem(USER_ID)
-        this.$root.$data.token = localStorage.getItem(USER_ID)
+        this.$root.$data.token = localStorage.getItem(AUTH_TOKEN)
       }
     }
   }

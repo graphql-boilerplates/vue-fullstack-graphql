@@ -66,10 +66,7 @@ Vue.use(VueApollo)
 
 // Apollo provider init
 const apolloProvider = new VueApollo({
-  defaultClient: client,
-  defaultOptions: {
-    $loadingKey: 'loading'
-  }
+  defaultClient: client
 })
 
 // get user authentication token saved after login

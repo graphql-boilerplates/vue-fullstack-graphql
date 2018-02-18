@@ -1,5 +1,5 @@
 <template>
-  <div class='create'>
+  <div class='login'>
     <main class="pa4 black-80 tl">
         <form class="measure center" v-on:submit.prevent="login">
           <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
@@ -34,7 +34,7 @@
             <input class="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib  w-80"
               v-bind:class="classObject"
               type="submit"
-              value="Sign in"
+              value="Sign In"
             >
           </div>
         </form>
@@ -81,6 +81,9 @@
         }).then((data) => {
           // Result
           console.log(data);
+          const user = data.login.user.user
+          const token = data.login.token
+          this.saveUserData(user, token)
           this.$router.push({ path: 'Blog' })
         }).catch((error) => {
           // Error
@@ -90,7 +93,7 @@
       },
 
       saveUserData (user, token) {
-        // localStorage.setItem(USER_ID, user)
+        localStorage.setItem(USER_ID, user)
         localStorage.setItem(AUTH_TOKEN, token)
         this.$root.$data.token = localStorage.getItem(USER_TOKEN)
       }
