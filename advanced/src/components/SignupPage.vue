@@ -3,8 +3,8 @@
     <main class="pa4 black-80 tl">
         <form class="measure center" v-on:submit.prevent="signup">
           <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
-            <legend class="f4 fw6 ph0 mh0 justify-between">Don't have an account? 
-              <a href="#0" class="link dim blue db f4 fw6 ph0 mh0 fr">Sign Up</a>
+            <legend class="f4 fw6 ph0 mh0 justify-between">Already have an account? 
+              <router-link v-bind:to="'/login'" exact class="link dim blue db f4 fw6 ph0 mh0 fr">Sign In</router-link>
             </legend>
             <div class="mt3">
               <label class="db fw6 lh-copy f6" for="email-address">Name</label>

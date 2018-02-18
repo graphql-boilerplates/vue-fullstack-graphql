@@ -75,7 +75,7 @@ let token = localStorage.getItem(AUTH_TOKEN)
 // Start the app
 new Vue({
   el: '#app',
-  apolloProvider,
+  provide: apolloProvider.provide(),
   router,
   data: {
     token
