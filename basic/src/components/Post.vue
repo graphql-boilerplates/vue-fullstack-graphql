@@ -1,9 +1,17 @@
 <template>
   <router-link :to="{ name: 'Detail', params: { id: post.id }}" class="no-underline ma1">
-    <div class='container'>
-      <h2 className="f3 black-80 fw4 lh-solid">{{ post.title }}</h2>
-      <p className="black-80 fw3">{{ post.text }}</p>
-    </div>
+    <article class="bb b--black-10">
+      <a class="db pv4 ph3 ph0-l no-underline black dim" href="#0">
+        <div class="flex flex-column flex-row-ns">
+          <div class="w-100 w-60-ns pl3-ns">
+            <h1 class="f3 fw1 baskerville mt0 lh-title">{{ post.title }}</h1>
+            <p class="f6 f5-l lh-copy">
+              {{ post.text }}
+            </p>
+          </div>
+        </div>
+      </a>
+    </article>
   </router-link>
 </template>
 
@@ -23,9 +31,5 @@
   }
 </script>
 <style>
-/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
-    margin:10px;
-}
+
 </style>
