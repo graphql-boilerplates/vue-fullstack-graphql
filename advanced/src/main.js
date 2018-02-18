@@ -1,7 +1,13 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { ApolloClient, createBatchingNetworkInterface } from 'apollo-client'
-import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws'
+import { ApolloClient } from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { setContext } from 'apollo-link-context'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { WebSocketLink } from 'apollo-link-ws'
+import { ApolloLink, split } from 'apollo-link'
+import { withClientState } from 'apollo-link-state'
+import { getMainDefinition } from 'apollo-utilities'
 import VueApollo from 'vue-apollo'
 import router from './router'
 import { USER_ID, AUTH_TOKEN } from './constants'
@@ -9,36 +15,49 @@ import { USER_ID, AUTH_TOKEN } from './constants'
 // Vue production tip config
 Vue.config.productionTip = false
 
+const httpLink = new HttpLink({ uri: 'https://uniserver.now.sh/' })
 
-const networkInterface = createBatchingNetworkInterface({
-  uri: 'https://uniserver.now.sh/'
+
+
+const middlewareLink = new ApolloLink((operation, forward) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem(AUTH_TOKEN)
+  // return the headers to the context so httpLink can read them
+  operation.setContext({
+    headers: {
+      Authorization: token ? `Bearer ${token}` : "",
+    }
+  })
+  return forward(operation)
 })
 
-const wsClient = new SubscriptionClient('__SUBSCRIPTION_API_ENDPOINT__', {
-  reconnect: true,
-  connectionParams: {
-    Authorisation: `Bearer ${localStorage.getItem(AUTH_TOKEN)}`
+// Authenticated httplink
+const httpLinkAuth = middlewareLink.concat(httpLink)
+
+const wsLink = new WebSocketLink({
+  uri: `wss://uniserver.now.sh/`,
+  options: {
+    reconnect: true,
+    connectionParams: {
+      Authorization: `Bearer ${localStorage.getItem(AUTH_TOKEN)}`
+    }
   }
 })
 
-const networkInterfaceWithSubscriptions = addGraphQLSubscriptions(
-  networkInterface,
-  wsClient
+const link = split(
+  // split based on operation type
+  ({ query }) => {
+    const { kind, operation } = getMainDefinition(query)
+    return kind === 'OperationDefinition' && operation === 'subscription'
+  },
+  wsLink,
+  httpLinkAuth,
 )
 
-networkInterface.use([{
-  applyBatchMiddleware (req, next) {
-    if (!req.options.headers) {
-      req.options.headers = {}
-    }
-    const token = localStorage.getItem(AUTH_TOKEN)
-    req.options.headers.authorization = token ? `Bearer ${token}` : null
-    next()
-  }
-}])
-
-const apolloClient = new ApolloClient({
-  networkInterface: networkInterfaceWithSubscriptions,
+// apollo client setup
+const client = new ApolloClient({
+  link: ApolloLink.from([link]),
+  cache: new InMemoryCache(),
   connectToDevTools: true
 })
 
@@ -47,7 +66,7 @@ Vue.use(VueApollo)
 
 // Apollo provider init
 const apolloProvider = new VueApollo({
-  defaultClient: apolloClient,
+  defaultClient: client,
   defaultOptions: {
     $loadingKey: 'loading'
   }

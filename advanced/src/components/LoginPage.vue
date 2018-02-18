@@ -67,7 +67,7 @@
 
     // Attribute
     methods: {
-      create() {
+      login() {
         const email = this.email
         const password = this.password
 
