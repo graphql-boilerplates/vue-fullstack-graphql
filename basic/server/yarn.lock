@@ -1768,9 +1768,9 @@ graphql-cli@2.12.2:
     source-map-support "^0.5.0"
     yargs "10.1.1"
 
-graphql-cli@2.14.1:
-  version "2.14.1"
-  resolved "https://registry.yarnpkg.com/graphql-cli/-/graphql-cli-2.14.1.tgz#0f50442177169dca40c52ecb7c83ecd903863e1a"
+graphql-cli@2.14.2:
+  version "2.14.2"
+  resolved "https://registry.yarnpkg.com/graphql-cli/-/graphql-cli-2.14.2.tgz#681f51598c084de3961e2fceb7774dd96ec36508"
   dependencies:
     adm-zip "^0.4.7"
     chalk "^2.3.1"
@@ -1780,7 +1780,7 @@ graphql-cli@2.14.1:
     dotenv "^5.0.0"
     express "^4.16.2"
     express-request-proxy "^2.0.0"
-    graphql "0.13.0"
+    graphql "0.13.1"
     graphql-cli-prepare "1.4.14"
     graphql-config "2.0.0"
     graphql-config-extension-graphcool "1.0.7"
@@ -2059,6 +2059,12 @@ graphql@0.13.0, graphql@^0.13.0:
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.0.tgz#d1b44a282279a9ce0a6ec1037329332f4c1079b6"
   dependencies:
     iterall "1.1.x"
+
+graphql@0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.1.tgz#9b3db3d8e40d1827e4172404bfdd2e4e17a58b55"
+  dependencies:
+    iterall "^1.2.0"
 
 graphql@^0.10.1:
   version "0.10.5"
@@ -2505,6 +2511,10 @@ iterall@1.1.x, iterall@^1.1.0:
 iterall@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.0.tgz#434e9f41f0b99911ab9c3d49d95f0e079176a2a2"
+
+iterall@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.1.tgz#59a347ae8001d2d4bc546b8487ca755d61849965"
 
 js-base64@^2.3.2:
   version "2.4.3"
