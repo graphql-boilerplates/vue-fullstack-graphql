@@ -2207,7 +2207,7 @@ graphql-yoga@1.3.3:
     graphql-tools "^2.18.0"
     subscriptions-transport-ws "^0.9.5"
 
-graphql@0.12.3, graphql@0.13.0, graphql@0.13.1, graphql@^0.10.1, graphql@^0.11.7, graphql@^0.12.3, graphql@^0.13.0:
+graphql@0.12.3, graphql@0.13.1, graphql@^0.10.1, graphql@^0.11.7, graphql@^0.12.3, graphql@^0.13.0:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.13.1.tgz#9b3db3d8e40d1827e4172404bfdd2e4e17a58b55"
   dependencies:
@@ -3767,15 +3767,14 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prisma-binding@1.5.11:
-  version "1.5.11"
-  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-1.5.11.tgz#f1c7a03ea054ecd76375f79d3bca79434614b6a1"
+prisma-binding@1.5.12:
+  version "1.5.12"
+  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-1.5.12.tgz#33122e408ebacd7e49fd0615bbecde9a0acaeddf"
   dependencies:
     apollo-link "1.0.7"
     apollo-link-error "1.0.3"
     apollo-link-ws "1.0.4"
     cross-fetch "1.1.1"
-    graphql "0.13.0"
     graphql-binding "1.2.2"
     graphql-import "0.4.3"
     graphql-tools "2.20.2"
