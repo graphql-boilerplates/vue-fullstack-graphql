@@ -1810,9 +1810,9 @@ graphql-cli@2.12.2:
     source-map-support "^0.5.0"
     yargs "10.1.1"
 
-graphql-cli@2.14.2:
-  version "2.14.2"
-  resolved "https://registry.yarnpkg.com/graphql-cli/-/graphql-cli-2.14.2.tgz#681f51598c084de3961e2fceb7774dd96ec36508"
+graphql-cli@2.14.3:
+  version "2.14.3"
+  resolved "https://registry.yarnpkg.com/graphql-cli/-/graphql-cli-2.14.3.tgz#6a367afac3cf824c088847a296da683e9719f886"
   dependencies:
     adm-zip "^0.4.7"
     chalk "^2.3.1"
@@ -1827,7 +1827,7 @@ graphql-cli@2.14.2:
     graphql-config "2.0.0"
     graphql-config-extension-graphcool "1.0.7"
     graphql-config-extension-openapi "1.0.2"
-    graphql-config-extension-prisma "0.0.6"
+    graphql-config-extension-prisma "0.0.7"
     graphql-playground-middleware-express "1.5.6"
     graphql-schema-linter "0.1.1"
     inquirer "5.1.0"
@@ -1880,12 +1880,12 @@ graphql-config-extension-prisma@0.0.3:
     graphql-config "^1.1.4"
     prisma-yml "0.0.4"
 
-graphql-config-extension-prisma@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/graphql-config-extension-prisma/-/graphql-config-extension-prisma-0.0.6.tgz#51d2f552d94ef983e07bd86a23054aac144bbbc7"
+graphql-config-extension-prisma@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/graphql-config-extension-prisma/-/graphql-config-extension-prisma-0.0.7.tgz#2abe12d7e4a4e523af32b28941d41ebed8b2c343"
   dependencies:
     graphql-config "^2.0.0"
-    prisma-yml "1.0.21"
+    prisma-yml "1.0.25"
 
 graphql-config@1.1.7:
   version "1.1.7"
@@ -3608,9 +3608,9 @@ prisma-yml@1.0.13:
     scuid "^1.0.2"
     yaml-ast-parser "^0.0.40"
 
-prisma-yml@1.0.21:
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/prisma-yml/-/prisma-yml-1.0.21.tgz#dbf0b7a1ae70ca6af880662d8fd97a14fa1c2dca"
+prisma-yml@1.0.25:
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/prisma-yml/-/prisma-yml-1.0.25.tgz#e7989efa85320d7f7695d2280ba305abe5262f75"
   dependencies:
     ajv "5"
     bluebird "^3.5.1"
