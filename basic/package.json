@@ -12,7 +12,7 @@
     "apollo-cache-inmemory": "1.1.9",
     "apollo-client": "2.2.5",
     "apollo-link": "1.2.0",
-    "apollo-link-http": "1.4.0",
+    "apollo-link-http": "1.5.0",
     "apollo-link-ws": "1.0.5",
     "vue": "2.5.13",
     "vue-apollo": "3.0.0-beta.4",
