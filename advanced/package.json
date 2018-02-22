@@ -19,7 +19,7 @@
     "apollo-utilities": "1.0.8",
     "graphql": "0.13.1",
     "graphql-tag": "2.7.3",
-    "subscriptions-transport-ws": "0.9.5",
+    "subscriptions-transport-ws": "0.9.6",
     "vue": "2.5.13",
     "vue-apollo": "3.0.0-beta.4",
     "vue-router": "3.0.1",
