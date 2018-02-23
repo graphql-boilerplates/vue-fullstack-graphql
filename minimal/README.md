@@ -12,7 +12,7 @@
 - **Scalable GraphQL server:** The server uses [`graphql-yoga`](https://github.com/prisma/graphql-yoga) which is based on Apollo Server & Express
 - **Pre-configured Apollo Client:** The project comes with a preconfigured setup for Apollo Client
 - **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
-- **Extensible**: Minimal [GraphQL schema](https://blog.graph.cool/graphql-server-basics-the-schema-ac5e2950214e) – easy extend
+- **Extensible**: Minimal [GraphQL schema](https://blog.graph.cool/graphql-server-basics-the-schema-ac5e2950214e) – easy to extend
 - **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
 
 
