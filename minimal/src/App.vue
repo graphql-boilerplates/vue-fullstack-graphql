@@ -83,6 +83,7 @@ body {
 
 .App-intro {
   font-size: large;
+  text-align: 'center';
 }
 
 h3 {
