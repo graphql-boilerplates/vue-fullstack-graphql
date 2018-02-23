@@ -12,7 +12,7 @@
     "apollo-cache-inmemory": "1.1.9",
     "apollo-client": "2.2.5",
     "apollo-link": "1.2.1",
-    "apollo-link-context": "1.0.5",
+    "apollo-link-context": "1.0.7",
     "apollo-link-http": "1.5.1",
     "apollo-link-state": "0.4.0",
     "apollo-link-ws": "1.0.7",
