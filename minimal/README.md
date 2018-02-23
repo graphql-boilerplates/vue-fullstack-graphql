@@ -36,7 +36,7 @@ graphql create my-app --boilerplate vue-fullstack-minimal
 cd my-app/server
 
 # 4. Start the server
-yarn dev # runs server on http://localhost:4000, and opens GraphQL PLayground
+yarn start
 
 # 5. Open a new tab in the terminal and navigate back into my-app;
 # then run the app
