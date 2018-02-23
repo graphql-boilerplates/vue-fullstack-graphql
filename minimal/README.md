@@ -1,8 +1,8 @@
-<h1 align="center"><strong>Boilerplate for a Basic Fullstack GraphQL App with Vue</strong></h1>
+<h1 align="center"><strong>Boilerplate for a Minimal Fullstack GraphQL App with Vue</strong></h1>
 
 <br />
 
-![](https://imgur.com/ousyQaC.png)
+![](https://camo.githubusercontent.com/e78e52aa36ff76ef5e142bfeced3b5f657b3fc26/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f3830302f312a483941414e6f6f664c716a53313058643554775259772e706e67)
 
 <div align="center"><strong>🚀 Bootstrap your fullstack GraphQL app within seconds</strong></div>
 <div align="center">Basic starter kit for a fullstack GraphQL app with Vue and Node.js - based on best practices from the GraphQL community.</div>
@@ -12,7 +12,7 @@
 - **Scalable GraphQL server:** The server uses [`graphql-yoga`](https://github.com/prisma/graphql-yoga) which is based on Apollo Server & Express
 - **Pre-configured Apollo Client:** The project comes with a preconfigured setup for Apollo Client
 - **Tooling**: Out-of-the-box support for [GraphQL Playground](https://github.com/prisma/graphql-playground) & [query performance tracing](https://github.com/apollographql/apollo-tracing)
-- **Extensible**: Simple and flexible [data model](./database/datamodel.graphql) – easy to adjust and extend
+- **Extensible**: Minimal [GraphQL schema](https://blog.graph.cool/graphql-server-basics-the-schema-ac5e2950214e) – easy extend
 - **No configuration overhead**: Preconfigured [`graphql-config`](https://github.com/prisma/graphql-config) setup
 
 
