@@ -4412,9 +4412,9 @@ postcss-unique-selectors@^2.0.2:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss-url@7.3.0:
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/postcss-url/-/postcss-url-7.3.0.tgz#cf2f45e06743cf43cfea25309f81cbc003dc783f"
+postcss-url@7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/postcss-url/-/postcss-url-7.3.1.tgz#b43ae0f0dae4cd06c831fa3aeac2d7a5b73754ed"
   dependencies:
     mime "^1.4.1"
     minimatch "^3.0.4"
