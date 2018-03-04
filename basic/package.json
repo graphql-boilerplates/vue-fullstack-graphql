@@ -14,6 +14,8 @@
     "apollo-link": "1.2.1",
     "apollo-link-http": "1.5.1",
     "apollo-link-ws": "1.0.7",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
     "vue": "2.5.13",
     "vue-apollo": "3.0.0-beta.4",
     "vue-router": "3.0.1",
