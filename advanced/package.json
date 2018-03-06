@@ -16,7 +16,7 @@
     "apollo-link-http": "1.5.3",
     "apollo-link-state": "0.4.0",
     "apollo-link-ws": "1.0.7",
-    "apollo-utilities": "1.0.8",
+    "apollo-utilities": "1.0.9",
     "graphql": "0.13.1",
     "graphql-tag": "2.8.0",
     "jwt-decode": "2.2.0",
