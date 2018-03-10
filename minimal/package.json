@@ -49,7 +49,7 @@
     "semver": "5.5.0",
     "shelljs": "0.8.1",
     "tachyons": "4.9.1",
-    "uglifyjs-webpack-plugin": "1.2.2",
+    "uglifyjs-webpack-plugin": "1.2.3",
     "url-loader": "0.6.2",
     "vue-loader": "14.2.1",
     "vue-style-loader": "4.0.2",
