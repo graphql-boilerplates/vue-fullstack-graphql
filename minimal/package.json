@@ -17,7 +17,7 @@
     "vue": "2.5.14",
     "vue-apollo": "3.0.0-beta.5",
     "vue-router": "3.0.1",
-    "vue-template-compiler": "2.5.14"
+    "vue-template-compiler": "2.5.15"
   },
   "devDependencies": {
     "autoprefixer": "8.1.0",
