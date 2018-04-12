@@ -185,11 +185,11 @@ apollo-link-state@0.4.1:
     apollo-utilities "^1.0.8"
     graphql-anywhere "^4.1.0-alpha.0"
 
-apollo-link-ws@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/apollo-link-ws/-/apollo-link-ws-1.0.7.tgz#6cc3903cbfbbefe213ea9fc8121f5fed3cef1823"
+apollo-link-ws@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/apollo-link-ws/-/apollo-link-ws-1.0.8.tgz#ac1de8f29e92418728479a9a523af9f75b9ccc8b"
   dependencies:
-    apollo-link "^1.2.1"
+    apollo-link "^1.2.2"
 
 apollo-link@1.2.2, apollo-link@^1.2.2:
   version "1.2.2"
