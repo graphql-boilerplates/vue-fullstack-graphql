@@ -181,18 +181,18 @@ apollo-link-dedup@^1.0.0:
   dependencies:
     apollo-link "^1.1.0"
 
-apollo-link-http-common@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/apollo-link-http-common/-/apollo-link-http-common-0.2.3.tgz#82ae0d4ff0cdd7c5c8826411d9dd7f7d8049ca46"
+apollo-link-http-common@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/apollo-link-http-common/-/apollo-link-http-common-0.2.4.tgz#877603f7904dc8f70242cac61808b1f8d034b2c3"
   dependencies:
-    apollo-link "^1.2.1"
+    apollo-link "^1.2.2"
 
-apollo-link-http@1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.3.tgz#3aa0d3ecfe5666ef0c360f359c425ff6ea1d285b"
+apollo-link-http@1.5.4:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/apollo-link-http/-/apollo-link-http-1.5.4.tgz#b80b7b4b342c655b6a5614624b076a36be368f43"
   dependencies:
-    apollo-link "^1.2.1"
-    apollo-link-http-common "^0.2.3"
+    apollo-link "^1.2.2"
+    apollo-link-http-common "^0.2.4"
 
 apollo-link-ws@1.0.7:
   version "1.0.7"
@@ -200,7 +200,7 @@ apollo-link-ws@1.0.7:
   dependencies:
     apollo-link "^1.2.1"
 
-apollo-link@1.2.2:
+apollo-link@1.2.2, apollo-link@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.2.tgz#54c84199b18ac1af8d63553a68ca389c05217a03"
   dependencies:
