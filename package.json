@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "subscriptions-transport-ws": "^0.9.5"
+  }
+}
