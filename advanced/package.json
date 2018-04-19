@@ -18,7 +18,7 @@
     "apollo-link-ws": "1.0.8",
     "apollo-utilities": "1.0.11",
     "graphql": "0.13.2",
-    "graphql-tag": "2.8.0",
+    "graphql-tag": "2.9.0",
     "jwt-decode": "2.2.0",
     "subscriptions-transport-ws": "0.9.7",
     "vue": "2.5.16",
