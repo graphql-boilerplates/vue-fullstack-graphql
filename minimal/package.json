@@ -13,7 +13,7 @@
     "apollo-client": "2.2.8",
     "apollo-link-http": "1.5.4",
     "graphql": "0.13.2",
-    "graphql-tag": "2.9.1",
+    "graphql-tag": "2.9.2",
     "vue": "2.5.16",
     "vue-apollo": "3.0.0-beta.5",
     "vue-router": "3.0.1",
