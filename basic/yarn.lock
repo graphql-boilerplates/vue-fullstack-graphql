@@ -143,19 +143,25 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@1.1.12:
-  version "1.1.12"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.1.12.tgz#ab489bf046b3e026556ab28bdebb6e010cac9531"
+apollo-cache-inmemory@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.2.0.tgz#a5b98fd67a810215b2d03e4a924cf0c554d6ebb4"
   dependencies:
-    apollo-cache "^1.1.7"
-    apollo-utilities "^1.0.11"
-    graphql-anywhere "^4.1.8"
+    apollo-cache "^1.1.8"
+    apollo-utilities "^1.0.12"
+    graphql-anywhere "^4.1.9"
 
 apollo-cache@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.7.tgz#5817018a2fbfc05a21ba319bd17a3e7538110cc5"
   dependencies:
     apollo-utilities "^1.0.11"
+
+apollo-cache@^1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.8.tgz#b078d33dec876d52b5a81a325d3c254d4e362d3c"
+  dependencies:
+    apollo-utilities "^1.0.12"
 
 apollo-client@2.2.8:
   version "2.2.8"
@@ -219,6 +225,10 @@ apollo-utilities@^1.0.0:
 apollo-utilities@^1.0.11:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.11.tgz#cd36bfa6e5c04eea2caf0c204a0f38a0ad550802"
+
+apollo-utilities@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.12.tgz#9e2b2a34cf89f3bf0d73a664effd8c1bb5d1b7f7"
 
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
@@ -2846,11 +2856,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-graphql-anywhere@^4.1.8:
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.8.tgz#23882e6a16ec824febbe5bca40937cdd76c5acdc"
+graphql-anywhere@^4.1.9:
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.9.tgz#831bbf2c4972bd104a60175ba107ab3ae65008d1"
   dependencies:
-    apollo-utilities "^1.0.11"
+    apollo-utilities "^1.0.12"
 
 graphql-tag@2.9.2:
   version "2.9.2"
