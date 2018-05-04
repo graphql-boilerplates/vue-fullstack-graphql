@@ -48,7 +48,7 @@
     "ora": "2.1.0",
     "portfinder": "1.0.13",
     "postcss-import": "11.1.0",
-    "postcss-loader": "2.1.4",
+    "postcss-loader": "2.1.5",
     "postcss-url": "7.3.2",
     "rimraf": "2.6.2",
     "semver": "5.5.0",
