@@ -157,9 +157,9 @@ apollo-cache@^1.1.8:
   dependencies:
     apollo-utilities "^1.0.12"
 
-apollo-client@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.3.0.tgz#6c8c9cfef5eaa28d89094078b5b4a59e9b6babaa"
+apollo-client@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.3.1.tgz#64b204779b7e8b21f901529527a9a9c973eb7fd4"
   dependencies:
     "@types/zen-observable" "^0.5.3"
     apollo-cache "^1.1.8"
