@@ -15,7 +15,7 @@ Vue.config.productionTip = false
 const httpLink = new HttpLink({ uri: 'http://localhost:4000/' })
 
 const wsLink = new WebSocketLink({
-  uri: `wss://localhost:4000/`,
+  uri: `ws://localhost:4000/`,
   options: {
     reconnect: true,
   }
