@@ -5,6 +5,7 @@ import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import { WebSocketLink } from 'apollo-link-ws'
 import { ApolloLink, split } from 'apollo-link'
+import { getMainDefinition } from 'apollo-utilities'
 import VueApollo from 'vue-apollo'
 import router from './router'
 
