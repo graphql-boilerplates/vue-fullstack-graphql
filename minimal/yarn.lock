@@ -6086,9 +6086,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-apollo@3.0.0-beta.7:
-  version "3.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.7.tgz#a0a9aff93e1193eea723e0e7ba652eea6bd747b6"
+vue-apollo@3.0.0-beta.9:
+  version "3.0.0-beta.9"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.9.tgz#5431fe46f9f536a28661f5e1cff2d2b0c4c68a19"
   dependencies:
     lodash.debounce "^4.0.8"
     lodash.omit "^4.5.0"
