@@ -5868,9 +5868,9 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-webpack-bundle-analyzer@2.11.3:
-  version "2.11.3"
-  resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-2.11.3.tgz#4b442c9bd23f1853af4c9af3a90e21646f16afc3"
+webpack-bundle-analyzer@2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/webpack-bundle-analyzer/-/webpack-bundle-analyzer-2.12.0.tgz#abb8ed9053123dabeb03a0463db52706f54730c7"
   dependencies:
     acorn "^5.3.0"
     bfj-node4 "^5.2.0"
