@@ -6113,9 +6113,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-apollo@3.0.0-beta.12:
-  version "3.0.0-beta.12"
-  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.12.tgz#d13d4cf516d70eaf56813c10c73973a06c8152ac"
+vue-apollo@3.0.0-beta.13:
+  version "3.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.13.tgz#fc934b3abb44cb74f4789c5a6713c0df69192988"
   dependencies:
     throttle-debounce "^1.0.1"
 
