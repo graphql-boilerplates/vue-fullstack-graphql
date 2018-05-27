@@ -44,7 +44,7 @@
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "2.30.1",
     "node-notifier": "5.2.1",
-    "optimize-css-assets-webpack-plugin": "4.0.1",
+    "optimize-css-assets-webpack-plugin": "4.0.2",
     "ora": "2.1.0",
     "portfinder": "1.0.13",
     "postcss-import": "11.1.0",
