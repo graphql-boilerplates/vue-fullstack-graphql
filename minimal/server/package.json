@@ -14,7 +14,7 @@
     "babel-core": "6.26.3",
     "babel-polyfill": "6.26.0",
     "babel-preset-es2015": "6.24.1",
-    "graphql-yoga": "1.14.6",
+    "graphql-yoga": "1.14.7",
     "nodemon": "1.17.5"
   }
 }
