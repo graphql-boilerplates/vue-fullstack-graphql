@@ -9,8 +9,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "apollo-cache-inmemory": "1.2.2",
-    "apollo-client": "2.3.2",
+    "apollo-cache-inmemory": "1.2.3",
+    "apollo-client": "2.3.3",
     "apollo-link": "1.2.2",
     "apollo-link-http": "1.5.4",
     "apollo-link-ws": "1.0.8",
