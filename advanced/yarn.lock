@@ -121,29 +121,29 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.2.3.tgz#873915049dc0f5bbea808d314223eae235d155cd"
+apollo-cache-inmemory@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.2.4.tgz#452e731a6777756d744d493a3223cf04f8e50c9b"
   dependencies:
-    apollo-cache "^1.1.10"
-    apollo-utilities "^1.0.14"
-    graphql-anywhere "^4.1.12"
+    apollo-cache "^1.1.11"
+    apollo-utilities "^1.0.15"
+    graphql-anywhere "^4.1.13"
 
-apollo-cache@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.10.tgz#8b878155b85a515cf55316b09dd7960abaf0396f"
+apollo-cache@^1.1.11:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.1.11.tgz#998e31a4b278e2fbbbf36fef8fce39c08adc35ca"
   dependencies:
-    apollo-utilities "^1.0.14"
+    apollo-utilities "^1.0.15"
 
-apollo-client@2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.3.3.tgz#876ab4ca6891ba3b158b462686e88ff1fc622786"
+apollo-client@2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.3.4.tgz#308fbfa95423f9bde6827376d9a85802fe93e28d"
   dependencies:
     "@types/zen-observable" "^0.5.3"
-    apollo-cache "^1.1.10"
+    apollo-cache "^1.1.11"
     apollo-link "^1.0.0"
     apollo-link-dedup "^1.0.0"
-    apollo-utilities "^1.0.14"
+    apollo-utilities "^1.0.15"
     symbol-observable "^1.0.2"
     zen-observable "^0.8.0"
   optionalDependencies:
@@ -203,9 +203,9 @@ apollo-link@^1.0.0, apollo-link@^1.1.0:
     apollo-utilities "^1.0.0"
     zen-observable "^0.7.0"
 
-apollo-utilities@1.0.14, apollo-utilities@^1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.14.tgz#39dc94b6fe827ab2857167545c7dafc11c2b6174"
+apollo-utilities@1.0.15, apollo-utilities@^1.0.15:
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.15.tgz#8f1ba6e4ed9b92cb0de2ce7c032315a768860aae"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
 
@@ -2673,11 +2673,11 @@ graphql-anywhere@^4.1.0-alpha.0:
   dependencies:
     apollo-utilities "^1.0.8"
 
-graphql-anywhere@^4.1.12:
-  version "4.1.12"
-  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.12.tgz#1284ecce99d7bf060ad478b50970d9fbc53901d0"
+graphql-anywhere@^4.1.13:
+  version "4.1.13"
+  resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.13.tgz#5314b879b0b7066e6835ad2f5716b4dae381dc63"
   dependencies:
-    apollo-utilities "^1.0.14"
+    apollo-utilities "^1.0.15"
 
 graphql-tag@2.9.2:
   version "2.9.2"
