@@ -4214,9 +4214,9 @@ opn@^5.1.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimize-css-assets-webpack-plugin@4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-4.0.2.tgz#813d511d20fe5d9a605458441ed97074d79c1122"
+optimize-css-assets-webpack-plugin@4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-4.0.3.tgz#4f714e276b279700892c4a6202b7e22812d6f683"
   dependencies:
     cssnano "^3.10.0"
     last-call-webpack-plugin "^3.0.0"
