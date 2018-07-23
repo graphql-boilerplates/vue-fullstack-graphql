@@ -20,7 +20,7 @@
     "graphql": "0.13.2",
     "graphql-tag": "2.9.2",
     "jwt-decode": "2.2.0",
-    "subscriptions-transport-ws": "0.9.12",
+    "subscriptions-transport-ws": "0.9.13",
     "vue": "2.5.16",
     "vue-apollo": "3.0.0-beta.19",
     "vue-router": "3.0.1",
