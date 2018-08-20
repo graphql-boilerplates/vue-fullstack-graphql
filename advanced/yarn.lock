@@ -4245,9 +4245,9 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-portfinder@1.0.16:
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.16.tgz#a6a68be9c352bc66c1a4c17a261f661f3facaf52"
+portfinder@1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.17.tgz#a8a1691143e46c4735edefcf4fbcccedad26456a"
   dependencies:
     async "^1.5.2"
     debug "^2.2.0"
