@@ -18,7 +18,7 @@
     "graphql-tag": "2.9.2",
     "subscriptions-transport-ws": "0.9.14",
     "vue": "2.5.17",
-    "vue-apollo": "3.0.0-beta.19",
+    "vue-apollo": "3.0.0-beta.20",
     "vue-router": "3.0.1",
     "vue-template-compiler": "2.5.17"
   },
