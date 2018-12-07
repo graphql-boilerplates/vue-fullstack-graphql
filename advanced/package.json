@@ -14,7 +14,7 @@
     "apollo-link": "1.2.4",
     "apollo-link-context": "1.0.10",
     "apollo-link-http": "1.5.7",
-    "apollo-link-state": "0.4.1",
+    "apollo-link-state": "0.4.2",
     "apollo-link-ws": "1.0.10",
     "apollo-utilities": "1.0.26",
     "graphql": "0.13.2",
