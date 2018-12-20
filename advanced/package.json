@@ -21,10 +21,10 @@
     "graphql-tag": "2.10.0",
     "jwt-decode": "2.2.0",
     "subscriptions-transport-ws": "0.9.15",
-    "vue": "2.5.18",
+    "vue": "2.5.21",
     "vue-apollo": "3.0.0-beta.26",
     "vue-router": "3.0.2",
-    "vue-template-compiler": "2.5.18"
+    "vue-template-compiler": "2.5.21"
   },
   "devDependencies": {
     "autoprefixer": "8.6.5",
@@ -58,7 +58,7 @@
     "url-loader": "0.6.2",
     "vue-loader": "14.2.3",
     "vue-style-loader": "4.1.2",
-    "vue-template-compiler": "2.5.18",
+    "vue-template-compiler": "2.5.21",
     "webpack": "3.12.0",
     "webpack-bundle-analyzer": "2.13.1",
     "webpack-dev-server": "2.11.3",

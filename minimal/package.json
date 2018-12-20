@@ -14,10 +14,10 @@
     "apollo-link-http": "1.5.9",
     "graphql": "0.13.2",
     "graphql-tag": "2.10.0",
-    "vue": "2.5.18",
+    "vue": "2.5.21",
     "vue-apollo": "3.0.0-beta.26",
     "vue-router": "3.0.2",
-    "vue-template-compiler": "2.5.18"
+    "vue-template-compiler": "2.5.21"
   },
   "devDependencies": {
     "autoprefixer": "8.6.5",
