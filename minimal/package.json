@@ -15,7 +15,7 @@
     "graphql": "0.13.2",
     "graphql-tag": "2.10.1",
     "vue": "2.5.21",
-    "vue-apollo": "3.0.0-beta.26",
+    "vue-apollo": "3.0.0-beta.28",
     "vue-router": "3.0.2",
     "vue-template-compiler": "2.5.21"
   },
