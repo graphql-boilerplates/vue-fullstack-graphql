@@ -6,7 +6,7 @@ endpoint: __PRISMA_ENDPOINT__
 secret: mysecret123
 
 # the file path pointing to your data model
-datamodel: datamodel.graphql
+datamodel: datamodel.prisma
 
 # seed your service with initial data based on seed.graphql
 seed:
