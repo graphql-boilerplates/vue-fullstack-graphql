@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/node@>=6":
+  version "12.0.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.4.tgz#46832183115c904410c275e34cf9403992999c32"
+
 "@types/zen-observable@0.5.3":
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.5.3.tgz#91b728599544efbb7386d8b6633693a3c2e7ade5"
@@ -9,6 +13,13 @@
 "@types/zen-observable@^0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.0.tgz#8b63ab7f1aa5321248aad5ac890a485656dcea4d"
+
+"@wry/context@^0.4.0":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@wry/context/-/context-0.4.2.tgz#eb7fef6ffd0dbcd48f130e88c6a12f43a4cbb62a"
+  dependencies:
+    "@types/node" ">=6"
+    tslib "^1.9.3"
 
 abbrev@1:
   version "1.1.1"
@@ -146,42 +157,35 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.5.1.tgz#265d1ee67b0bf0aca9c37629d410bfae44e62953"
+apollo-cache-inmemory@1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.1.tgz#536b6f366461f6264250041f9146363e2faa1d4c"
   dependencies:
-    apollo-cache "^1.2.1"
-    apollo-utilities "^1.2.1"
-    optimism "^0.6.9"
-    ts-invariant "^0.2.1"
+    apollo-cache "^1.3.1"
+    apollo-utilities "^1.3.1"
+    optimism "^0.9.0"
+    ts-invariant "^0.4.0"
     tslib "^1.9.3"
 
-apollo-cache@1.2.1, apollo-cache@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.2.1.tgz#aae71eb4a11f1f7322adc343f84b1a39b0693644"
+apollo-cache@1.3.1, apollo-cache@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.3.1.tgz#c015f93a9a7f32b3eeea0c471addd6e854da754c"
   dependencies:
-    apollo-utilities "^1.2.1"
+    apollo-utilities "^1.3.1"
     tslib "^1.9.3"
 
-apollo-client@2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.5.1.tgz#36126ed1d32edd79c3713c6684546a3bea80e6d1"
+apollo-client@2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.6.1.tgz#fcf328618d6ad82b750a988bec113fe6edc8ba94"
   dependencies:
     "@types/zen-observable" "^0.8.0"
-    apollo-cache "1.2.1"
+    apollo-cache "1.3.1"
     apollo-link "^1.0.0"
-    apollo-link-dedup "^1.0.0"
-    apollo-utilities "1.2.1"
+    apollo-utilities "1.3.1"
     symbol-observable "^1.0.2"
-    ts-invariant "^0.2.1"
+    ts-invariant "^0.4.0"
     tslib "^1.9.3"
     zen-observable "^0.8.0"
-
-apollo-link-dedup@^1.0.0:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/apollo-link-dedup/-/apollo-link-dedup-1.0.6.tgz#566ab421a5f6ef41995e2e386f575600d51b1408"
-  dependencies:
-    apollo-link "^1.1.0"
 
 apollo-link-http-common@^0.2.13:
   version "0.2.13"
@@ -199,7 +203,7 @@ apollo-link-http@1.5.14:
     apollo-link-http-common "^0.2.13"
     tslib "^1.9.3"
 
-apollo-link@^1.0.0, apollo-link@^1.1.0:
+apollo-link@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.1.0.tgz#9d573b16387ee0d8e147b1f319e42c8c562f18f7"
   dependencies:
@@ -216,17 +220,26 @@ apollo-link@^1.2.11:
     tslib "^1.9.3"
     zen-observable-ts "^0.8.18"
 
-apollo-utilities@1.2.1, apollo-utilities@^1.2.1:
+apollo-utilities@1.3.1, apollo-utilities@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.3.1.tgz#4c45f9b52783c324e2beef822700bdea374f82d1"
+  dependencies:
+    fast-json-stable-stringify "^2.0.0"
+    lodash.isequal "^4.5.0"
+    ts-invariant "^0.4.0"
+    tslib "^1.9.3"
+
+apollo-utilities@^1.0.0:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.8.tgz#74d797d38953d2ba35e16f880326e2abcbc8b016"
+
+apollo-utilities@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.2.1.tgz#1c3a1ebf5607d7c8efe7636daaf58e7463b41b3c"
   dependencies:
     fast-json-stable-stringify "^2.0.0"
     ts-invariant "^0.2.1"
     tslib "^1.9.3"
-
-apollo-utilities@^1.0.0:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.8.tgz#74d797d38953d2ba35e16f880326e2abcbc8b016"
 
 aproba@^1.0.3, aproba@^1.1.1:
   version "1.2.0"
@@ -3235,10 +3248,6 @@ ignore@^3.3.3, ignore@^3.3.5:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
 
-immutable-tuple@^0.4.9:
-  version "0.4.9"
-  resolved "https://registry.yarnpkg.com/immutable-tuple/-/immutable-tuple-0.4.9.tgz#473ebdd6c169c461913a454bf87ef8f601a20ff0"
-
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"
@@ -3806,6 +3815,10 @@ locate-path@^2.0.0:
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
@@ -4420,11 +4433,11 @@ opn@^5.1.0:
   dependencies:
     is-wsl "^1.1.0"
 
-optimism@^0.6.9:
-  version "0.6.9"
-  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.6.9.tgz#19258ff8b3be0cea29ac35f06bff818e026e30bb"
+optimism@^0.9.0:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/optimism/-/optimism-0.9.5.tgz#b8b5dc9150e97b79ddbf2d2c6c0e44de4d255527"
   dependencies:
-    immutable-tuple "^0.4.9"
+    "@wry/context" "^0.4.0"
 
 optimize-css-assets-webpack-plugin@4.0.3:
   version "4.0.3"
@@ -6200,6 +6213,12 @@ ts-invariant@^0.2.1:
 ts-invariant@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.3.2.tgz#89a2ffeb70879b777258df1df1c59383c35209b0"
+  dependencies:
+    tslib "^1.9.3"
+
+ts-invariant@^0.4.0:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.4.2.tgz#8685131b8083e67c66d602540e78763408be9113"
   dependencies:
     tslib "^1.9.3"
 
