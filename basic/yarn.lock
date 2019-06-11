@@ -21,6 +21,12 @@
     "@types/node" ">=6"
     tslib "^1.9.3"
 
+"@wry/equality@^0.1.2":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@wry/equality/-/equality-0.1.9.tgz#b13e18b7a8053c6858aa6c85b54911fb31e3a909"
+  dependencies:
+    tslib "^1.9.3"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -157,31 +163,31 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-cache-inmemory@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.1.tgz#536b6f366461f6264250041f9146363e2faa1d4c"
+apollo-cache-inmemory@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.2.tgz#bbf2e4e1eacdf82b2d526f5c2f3b37e5acee3c5e"
   dependencies:
-    apollo-cache "^1.3.1"
-    apollo-utilities "^1.3.1"
+    apollo-cache "^1.3.2"
+    apollo-utilities "^1.3.2"
     optimism "^0.9.0"
     ts-invariant "^0.4.0"
     tslib "^1.9.3"
 
-apollo-cache@1.3.1, apollo-cache@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.3.1.tgz#c015f93a9a7f32b3eeea0c471addd6e854da754c"
+apollo-cache@1.3.2, apollo-cache@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/apollo-cache/-/apollo-cache-1.3.2.tgz#df4dce56240d6c95c613510d7e409f7214e6d26a"
   dependencies:
-    apollo-utilities "^1.3.1"
+    apollo-utilities "^1.3.2"
     tslib "^1.9.3"
 
-apollo-client@2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.6.1.tgz#fcf328618d6ad82b750a988bec113fe6edc8ba94"
+apollo-client@2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/apollo-client/-/apollo-client-2.6.2.tgz#03b6af651e09b6e413e486ddc87464c85bd6e514"
   dependencies:
     "@types/zen-observable" "^0.8.0"
-    apollo-cache "1.3.1"
+    apollo-cache "1.3.2"
     apollo-link "^1.0.0"
-    apollo-utilities "1.3.1"
+    apollo-utilities "1.3.2"
     symbol-observable "^1.0.2"
     ts-invariant "^0.4.0"
     tslib "^1.9.3"
@@ -227,12 +233,12 @@ apollo-link@^1.0.0:
     apollo-utilities "^1.0.0"
     zen-observable "^0.7.0"
 
-apollo-utilities@1.3.1, apollo-utilities@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.3.1.tgz#4c45f9b52783c324e2beef822700bdea374f82d1"
+apollo-utilities@1.3.2, apollo-utilities@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.3.2.tgz#8cbdcf8b012f664cd6cb5767f6130f5aed9115c9"
   dependencies:
+    "@wry/equality" "^0.1.2"
     fast-json-stable-stringify "^2.0.0"
-    lodash.isequal "^4.5.0"
     ts-invariant "^0.4.0"
     tslib "^1.9.3"
 
@@ -3826,10 +3832,6 @@ locate-path@^2.0.0:
 lodash.camelcase@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-
-lodash.isequal@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
 
 lodash.memoize@^4.1.2:
   version "4.1.2"
