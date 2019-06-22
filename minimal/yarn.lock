@@ -5613,6 +5613,10 @@ serialize-javascript@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.4.0.tgz#7c958514db6ac2443a8abc062dc9f7886a7f6005"
 
+serialize-javascript@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.7.0.tgz#d6e0dfb2a3832a8c94468e6eb1db97e55a192a65"
+
 serve-index@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/serve-index/-/serve-index-1.9.1.tgz#d3768d69b1e7d82e5ce050fff5b453bea12a9239"
@@ -6445,11 +6449,12 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-apollo@3.0.0-beta.30:
-  version "3.0.0-beta.30"
-  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-beta.30.tgz#081bc2b8c8f9d2ffd508675c17dc1017da5ba3f4"
+vue-apollo@3.0.0-rc.1:
+  version "3.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-rc.1.tgz#fed79fab2b77d6dfe6c5f0940ace80b0202d63e6"
   dependencies:
     chalk "^2.4.2"
+    serialize-javascript "^1.7.0"
     throttle-debounce "^2.1.0"
 
 vue-eslint-parser@^2.0.3:
