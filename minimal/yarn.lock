@@ -6459,9 +6459,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-apollo@3.0.0-rc.7:
-  version "3.0.0-rc.7"
-  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0-rc.7.tgz#4b603a9080acddf79d41d130609b5c66b7ded2eb"
+vue-apollo@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/vue-apollo/-/vue-apollo-3.0.0.tgz#e252130b18cbd7b0d060fc3dd9616813e4a65acf"
   dependencies:
     chalk "^2.4.2"
     serialize-javascript "^2.1.0"
