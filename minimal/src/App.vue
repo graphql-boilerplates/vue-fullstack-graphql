@@ -2,7 +2,7 @@
   <div id="app">
     <div class="App-header">
       <img src="./logo.svg" class="App-logo" alt="logo" />
-      <h3>Welcome to React + GraphQL + Apollo minimal boilerplate</h3>
+      <h3>Welcome to Vue + GraphQL + Apollo minimal boilerplate</h3>
       <template v-if="loading > 0">
         <div class="flex w-100 h-100 items-center justify-center pt7">
           <div>Loading...</div>
