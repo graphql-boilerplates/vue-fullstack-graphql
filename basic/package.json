@@ -14,7 +14,7 @@
     "apollo-link": "1.2.13",
     "apollo-link-http": "1.5.16",
     "apollo-link-ws": "1.0.19",
-    "graphql": "0.13.2",
+    "graphql": "14.6.0",
     "graphql-tag": "2.10.1",
     "subscriptions-transport-ws": "0.9.16",
     "vue": "2.6.11",
