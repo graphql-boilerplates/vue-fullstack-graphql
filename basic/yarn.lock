@@ -57,6 +57,10 @@ acorn-jsx@^3.0.0:
   dependencies:
     acorn "^3.0.4"
 
+acorn-jsx@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.2.0.tgz#4c66069173d6fdd68ed85239fc256226182b2ebe"
+
 acorn@^3.0.4:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
@@ -65,13 +69,17 @@ acorn@^4.0.3:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
-acorn@^5.0.0, acorn@^5.3.0, acorn@^5.4.0:
+acorn@^5.0.0, acorn@^5.3.0:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.4.1.tgz#fdc58d9d17f4a4e98d102ded826a9b9759125102"
 
 acorn@^5.5.0:
   version "5.5.3"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+
+acorn@^7.1.1:
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.1.tgz#e35668de0b402f359de515c5482a1ab9f89a69bf"
 
 ajv-keywords@^2.1.0:
   version "2.1.1"
@@ -1951,7 +1959,7 @@ debug@^3.1.1, debug@^3.2.6:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0:
+debug@^4.1.0, debug@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   dependencies:
@@ -2352,11 +2360,13 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-plugin-vue@4.7.1:
-  version "4.7.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-4.7.1.tgz#c829b9fc62582c1897b5a0b94afd44ecca511e63"
+eslint-plugin-vue@6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-6.2.2.tgz#27fecd9a3a24789b0f111ecdd540a9e56198e0fe"
   dependencies:
-    vue-eslint-parser "^2.0.3"
+    natural-compare "^1.4.0"
+    semver "^5.6.0"
+    vue-eslint-parser "^7.0.0"
 
 eslint-scope@^3.7.1:
   version "3.7.1"
@@ -2365,9 +2375,20 @@ eslint-scope@^3.7.1:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-scope@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-5.0.0.tgz#e87c8887c73e8d1ec84f1ca591645c358bfc8fb9"
+  dependencies:
+    esrecurse "^4.1.0"
+    estraverse "^4.1.1"
+
 eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
+
+eslint-visitor-keys@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
 
 eslint@4.19.1:
   version "4.19.1"
@@ -2412,19 +2433,20 @@ eslint@4.19.1:
     table "4.0.2"
     text-table "~0.2.0"
 
-espree@^3.5.2:
-  version "3.5.3"
-  resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.3.tgz#931e0af64e7fbbed26b050a29daad1fc64799fa6"
-  dependencies:
-    acorn "^5.4.0"
-    acorn-jsx "^3.0.0"
-
 espree@^3.5.4:
   version "3.5.4"
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
   dependencies:
     acorn "^5.5.0"
     acorn-jsx "^3.0.0"
+
+espree@^6.1.2:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/espree/-/espree-6.2.1.tgz#77fc72e1fd744a2052c20f38a5b575832e82734a"
+  dependencies:
+    acorn "^7.1.1"
+    acorn-jsx "^5.2.0"
+    eslint-visitor-keys "^1.1.0"
 
 esprima@^2.6.0:
   version "2.7.3"
@@ -2437,6 +2459,12 @@ esprima@^4.0.0:
 esquery@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.0.0.tgz#cfba8b57d7fba93f17298a8a006a04cda13d80fa"
+  dependencies:
+    estraverse "^4.0.0"
+
+esquery@^1.0.1:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/esquery/-/esquery-1.1.0.tgz#c5c0b66f383e7656404f86b31334d72524eddb48"
   dependencies:
     estraverse "^4.0.0"
 
@@ -5613,7 +5641,7 @@ selfsigned@^1.9.1:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
-semver@5.7.1:
+semver@5.7.1, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
 
@@ -6501,16 +6529,16 @@ vue-apollo@3.0.2:
     serialize-javascript "^2.1.0"
     throttle-debounce "^2.1.0"
 
-vue-eslint-parser@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
+vue-eslint-parser@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-7.0.0.tgz#a4ed2669f87179dedd06afdd8736acbb3a3864d6"
   dependencies:
-    debug "^3.1.0"
-    eslint-scope "^3.7.1"
-    eslint-visitor-keys "^1.0.0"
-    espree "^3.5.2"
-    esquery "^1.0.0"
-    lodash "^4.17.4"
+    debug "^4.1.1"
+    eslint-scope "^5.0.0"
+    eslint-visitor-keys "^1.1.0"
+    espree "^6.1.2"
+    esquery "^1.0.1"
+    lodash "^4.17.15"
 
 vue-hot-reload-api@^2.2.0:
   version "2.2.4"
