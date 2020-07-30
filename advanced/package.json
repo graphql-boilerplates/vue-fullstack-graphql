@@ -27,7 +27,7 @@
     "vue-template-compiler": "2.6.11"
   },
   "devDependencies": {
-    "autoprefixer": "8.6.5",
+    "autoprefixer": "9.8.6",
     "babel-core": "6.26.3",
     "babel-helper-vue-jsx-merge-props": "2.0.3",
     "babel-loader": "7.1.5",
