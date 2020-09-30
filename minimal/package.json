@@ -16,7 +16,7 @@
     "graphql-tag": "2.11.0",
     "vue": "2.6.12",
     "vue-apollo": "3.0.4",
-    "vue-router": "3.4.3",
+    "vue-router": "3.4.5",
     "vue-template-compiler": "2.6.12"
   },
   "devDependencies": {
