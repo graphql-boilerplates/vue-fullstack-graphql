@@ -22,7 +22,7 @@
     "jwt-decode": "2.2.0",
     "subscriptions-transport-ws": "0.9.18",
     "vue": "2.6.12",
-    "vue-apollo": "3.0.4",
+    "vue-apollo": "3.0.5",
     "vue-router": "3.4.6",
     "vue-template-compiler": "2.6.12"
   },
