@@ -41,7 +41,7 @@
     "file-loader": "1.1.11",
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "2.30.1",
-    "node-notifier": "5.4.3",
+    "node-notifier": "9.0.0",
     "optimize-css-assets-webpack-plugin": "4.0.3",
     "ora": "2.1.0",
     "portfinder": "1.0.28",
