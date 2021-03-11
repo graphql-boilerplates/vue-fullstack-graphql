@@ -50,7 +50,7 @@
     "postcss-import": "11.1.0",
     "postcss-loader": "2.1.6",
     "postcss-url": "7.3.2",
-    "rimraf": "2.7.1",
+    "rimraf": "3.0.2",
     "semver": "5.7.1",
     "shelljs": "0.8.4",
     "tachyons": "4.12.0",
