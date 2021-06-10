@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "subscriptions-transport-ws": "0.9.18"
+    "subscriptions-transport-ws": "0.9.19"
   }
 }
