@@ -16,7 +16,7 @@
     "dotenv": "5.0.1",
     "graphql-cli": "2.17.0",
     "nodemon": "1.19.4",
-    "npm-run-all2": "5.0.0",
+    "npm-run-all2": "5.0.2",
     "prisma": "1.7.0"
   }
 }
