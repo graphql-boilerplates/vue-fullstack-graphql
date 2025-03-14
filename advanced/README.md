@@ -29,7 +29,7 @@ npm install -g graphql-cli
 
 ```sh
 # 1. Bootstrap GraphQL server in directory `my-app`, based on `vue-fullstack-basic` boilerplate
-graphql create my-app --boilerplate vue-fullstack-basic
+graphql create my-app --boilerplate vue-fullstack-advanced
 
 # 2. When prompted, deploy the Prisma service to a _public cluster_
 
